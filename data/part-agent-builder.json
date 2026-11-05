@@ -52,14 +52,14 @@
    "steps": [
     "Two tabs sit at the top: Configure to build, Preview to test.",
     "Instructions: write what the agent does, its tone and its rules. Suggest improvements asks Copilot to tighten your text.",
-    "Skills: select Add to give the agent a packaged skill.",
-    "Knowledge: select Add knowledge, or drop files onto the box. Under Work content you can switch on or off Cloud files, Outlook, Teams and Copilot connectors.",
-    "Web search is a separate switch. If your organisation blocks public websites, it shows a warning and stays off.",
+    "Skills: select Add to give the agent a packaged skill. The Skills card on this tab explains how to make one.",
+    "Knowledge: select Add knowledge, or drop files onto the box. Under Work content you can switch on or off Cloud files (your OneDrive and SharePoint files), Outlook, Teams and Copilot connectors.",
+    "Web search is a separate switch. If your organisation blocks public websites, it shows a warning and stays off. Copilot connectors can also be off, so ask your admin if you need them.",
     "Attachments lets you add files. Suggested prompts lets you add title and message pairs. The screen shows three rows to start with."
    ],
    "prompts": [],
    "limits": [
-    "Seen in a live work tenant on 5 November 2026. Your screen may differ with your licence, admin settings and app version.",
+    "Seen in a live work tenant on 5 November 2026, where web search was blocked and Copilot connectors were off. Your screen may differ with your licence, admin settings and app version.",
     "Which knowledge sources you can use depends on your licence. See the licence card on this tab."
    ],
    "source": {
