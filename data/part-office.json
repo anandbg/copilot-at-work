@@ -1,0 +1,443 @@
+{
+ "features": [
+  {
+   "id": "word-draft-from-prompt",
+   "app": "word",
+   "title": "Draft a document from a prompt",
+   "summary": "Tell Copilot what you need and it writes a first draft in your document. You then keep it, discard it or refine it with a follow-up.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Open a document in Word.",
+    "Select the Copilot Dynamic Action Button in the corner of the document.",
+    "Copilot opens in the chat pane with Edit mode on.",
+    "Type a prompt describing the outcome you want and point Copilot to any source material.",
+    "Review the result, then keep it, discard it, or refine it with a follow-up prompt."
+   ],
+   "prompts": [
+    "Draft a customer brief about [initiative] for [audience].",
+    "Create an outline for a project update with sections for status, milestones, risks, and decisions needed.",
+    "Add a short conclusion with next steps."
+   ],
+   "limits": [
+    "Needs an eligible Microsoft 365 subscription and/or Microsoft Copilot license, and may be switched off by your organisation's settings.",
+    "Supports fewer languages than the Word interface.",
+    "Works within Word and your Microsoft 365 content. It does not connect to external tools."
+   ],
+   "source": {
+    "label": "Welcome to Copilot in Word",
+    "url": "https://support.microsoft.com/en-us/word/welcome-to-copilot-in-word"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Open document",
+    "Copilot button",
+    "Type prompt",
+    "Keep or refine"
+   ]
+  },
+  {
+   "id": "word-reference-files",
+   "app": "word",
+   "title": "Pull in your own files, emails or meetings",
+   "summary": "Point Copilot at a document, email or meeting so the draft uses that material instead of guessing.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Open Copilot in Word from the Copilot Dynamic Action Button.",
+    "In the chat pane, type / and start typing the name of a document, email or meeting.",
+    "Pick the item from the list.",
+    "Write your request, for example to summarise or build on it."
+   ],
+   "prompts": [
+    "Draft a one-page summary of the project in /[file name] for my manager.",
+    "Create an outline for a project update using /[meeting name].",
+    "What decisions are needed before this document is ready to share?"
+   ],
+   "limits": [
+    "You need permission to open the item you reference.",
+    "On Word for iPad, the Draft with Copilot dialog lets you attach up to three files with Reference a file, and this needs a Microsoft Copilot subscription. I did not find a desktop limit stated.",
+    "Availability depends on your licence, organisation settings and platform."
+   ],
+   "source": {
+    "label": "Welcome to Copilot in Word",
+    "url": "https://support.microsoft.com/en-us/word/welcome-to-copilot-in-word"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Open Copilot",
+    "Type slash",
+    "Pick item",
+    "Send prompt"
+   ]
+  },
+  {
+   "id": "word-rewrite-text",
+   "app": "word",
+   "title": "Rewrite or tighten text you already have",
+   "summary": "Select a passage and ask Copilot to rewrite it, shorten it or change the tone. For bigger changes, describe them in the chat pane.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Open Copilot in Word.",
+    "Select the text you want to change.",
+    "Choose Rewrite for a quick change to that passage.",
+    "For a larger change, describe it in the chat pane instead.",
+    "In a shared document, Copilot shows a preview of suggested changes in chat. Nothing is added until you approve it."
+   ],
+   "prompts": [
+    "Make this section more concise and customer-ready without changing the meaning.",
+    "Reorganize this section so the problems, risks and next steps are easier to follow.",
+    "Rewrite this paragraph in a more formal tone."
+   ],
+   "limits": [
+    "Always read the result. Copilot content is AI-generated and can be wrong.",
+    "Needs an eligible Microsoft 365 subscription and/or Microsoft Copilot license.",
+    "Supports fewer languages than the Word interface."
+   ],
+   "source": {
+    "label": "Welcome to Copilot in Word",
+    "url": "https://support.microsoft.com/en-us/word/welcome-to-copilot-in-word"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Select text",
+    "Choose Rewrite",
+    "Review preview",
+    "Approve change"
+   ]
+  },
+  {
+   "id": "word-summarise-ask",
+   "app": "word",
+   "title": "Summarise a document and ask questions about it",
+   "summary": "Get the key points of a long document, or ask Copilot what is unclear, without changing the file.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Open the document in Word and open Copilot.",
+    "Select Chat only so Copilot answers in chat and makes no changes to the document.",
+    "Ask for a summary or ask a question about the content.",
+    "A summary may also appear at the top of the page when you open a document, depending on your settings and license."
+   ],
+   "prompts": [
+    "Summarize this document in five bullets.",
+    "What decisions are needed before this document is ready to share?",
+    "What parts of this document may be unclear to a customer?"
+   ],
+   "limits": [
+    "The automatic summary at the top of the page depends on your settings and licence.",
+    "Check key facts against the document. Summaries can miss detail.",
+    "Needs an eligible Microsoft 365 subscription and/or Microsoft Copilot license."
+   ],
+   "source": {
+    "label": "Welcome to Copilot in Word",
+    "url": "https://support.microsoft.com/en-us/word/welcome-to-copilot-in-word"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Open Copilot",
+    "Select Chat only",
+    "Ask question",
+    "Read answer"
+   ]
+  },
+  {
+   "id": "excel-copilot-chat-analyse",
+   "app": "excel",
+   "title": "Ask Copilot to analyse or edit your workbook",
+   "summary": "Open Copilot in Excel and describe the task in plain words. It can edit the workbook directly, show a plan first, or just answer questions.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Select the Copilot icon in the lower-right corner of Excel.",
+    "Choose a mode: Allow editing (the default), Plan, or Chat only.",
+    "Describe the task in plain language.",
+    "In Plan mode, review and confirm the plan before Copilot changes anything.",
+    "Select the Stop button on the right of the chat input field if you need to halt a task."
+   ],
+   "prompts": [
+    "Summarize the feedback in A2:A20.",
+    "Classify each sentiment entry in B2:B100 and add the result in a new column.",
+    "Create a PivotTable with the sum of sales, with month in rows and category in columns."
+   ],
+   "limits": [
+    "Edit, chat and plan modes work on Excel for Windows, Mac and the web.",
+    "On iPad, chat and plan work and edit mode is described as rolling out to production. On iPhone and Android it is chat only (iPhone edit also rolling out).",
+    "Copilot may not be included in your subscription or may be restricted by your organisation."
+   ],
+   "source": {
+    "label": "Get started with Copilot in Excel",
+    "url": "https://support.microsoft.com/en-GB/copilot-excel"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Copilot icon",
+    "Pick mode",
+    "Describe task",
+    "Review result"
+   ]
+  },
+  {
+   "id": "excel-agent-mode",
+   "app": "excel",
+   "title": "Agent Mode: multi-step workbook jobs",
+   "summary": "Agent Mode lets Copilot plan and carry out several steps in one go, such as reshaping data, merging sheets or building a report. Microsoft's page now describes it as the Allow editing mode inside Copilot in Excel.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Select the Copilot icon in the lower-right corner of Excel.",
+    "Check the mode is Allow editing, which the page says supports complex, multi-step tasks.",
+    "Describe the whole job in one prompt.",
+    "Watch the changes. Select Stop on the right of the chat input field to pause.",
+    "Switch to Plan mode if you want to approve the steps first."
+   ],
+   "prompts": [
+    "Create a dashboard styled with our @brandkit.",
+    "Merge the sales sheets into one table and add a total per region.",
+    "Build a one-page report from this data with a chart for each month."
+   ],
+   "limits": [
+    "The original Agent Mode support page was titled as a Frontier preview. The current Copilot in Excel pages list editing as available on Windows, Mac and web without preview wording, but I could not find a Microsoft page that announces the move to general release, so check with your admin.",
+    "On iPad and iPhone, edit mode is described as rolling out to production.",
+    "Always check the numbers it produces against your source data."
+   ],
+   "source": {
+    "label": "Agent Mode in Excel (Frontier)",
+    "url": "https://support.microsoft.com/office/agent-mode-in-excel-frontier-a2fd6fe4-97ac-416b-b89a-22f4d1357c7a"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Copilot icon",
+    "Allow editing",
+    "Describe job",
+    "Review changes"
+   ]
+  },
+  {
+   "id": "excel-insights-charts",
+   "app": "excel",
+   "title": "Get insights, charts and PivotTables",
+   "summary": "Ask Copilot to spot trends and outliers in your data, or to build a chart or PivotTable for you.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Make sure your data is in an Excel table and select a cell inside it.",
+    "Select the Copilot icon in the lower-right corner of Excel.",
+    "Ask for insights, or name the format you want, such as a PivotTable or a chart.",
+    "Add a single chart to a sheet, or add all insights to a new sheet, and undo if it is not right."
+   ],
+   "prompts": [
+    "Create a PivotTable with the sum of sales, with month in rows and category in columns.",
+    "Highlight the top 10 values in column D in green.",
+    "Show me trends and outliers in this table."
+   ],
+   "limits": [
+    "Your data needs to be in an Excel table for this to work well.",
+    "The Get started page does not list size limits. Check the Visualize your data page for specifics.",
+    "Review everything Copilot generates before you share it."
+   ],
+   "source": {
+    "label": "Visualize your data with Copilot in Excel",
+    "url": "https://support.microsoft.com/en-us/office/05302e3f-de42-4475-b235-be9cb3d4e936"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Select table cell",
+    "Copilot icon",
+    "Ask for insight",
+    "Add to sheet"
+   ]
+  },
+  {
+   "id": "powerpoint-create-from-prompt",
+   "app": "powerpoint",
+   "title": "Create a presentation from a prompt",
+   "summary": "Describe the deck you want and Copilot builds it. It may ask about audience, length, template and images first.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Start a new presentation in PowerPoint.",
+    "Select the Copilot icon at the bottom-right corner of the screen to open Copilot Chat.",
+    "Leave the model selector on Auto unless you want to choose one.",
+    "If your organisation requires a Brand Kit, choose one in Select brand.",
+    "Describe the presentation in the prompt box and answer or skip Copilot's clarifying questions."
+   ],
+   "prompts": [
+    "Create a presentation about the history of soccer.",
+    "Create a 7-slide executive brief on [your topic], with a title slide, key insights, risks and mitigations, and next steps.",
+    "Add a slide about [topic]."
+   ],
+   "limits": [
+    "Needs an eligible Microsoft 365 subscription and/or Microsoft Copilot license.",
+    "Copilot builds from your selected template. Start from your organisation's template to keep its look.",
+    "AI-generated content can be wrong. Review every slide."
+   ],
+   "source": {
+    "label": "Create a new presentation with Copilot in PowerPoint",
+    "url": "https://support.microsoft.com/en-gb/copilot-powerpoint"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "New presentation",
+    "Copilot icon",
+    "Describe deck",
+    "Answer questions"
+   ]
+  },
+  {
+   "id": "powerpoint-create-from-file",
+   "app": "powerpoint",
+   "title": "Turn a Word document into a deck",
+   "summary": "Point Copilot at a Word document and it turns it into slides.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Open the Copilot pane.",
+    "Type or select Create presentation from file in the suggested prompt menu.",
+    "Search your files or paste the URL of a Word document.",
+    "Review the slides Copilot builds."
+   ],
+   "prompts": [
+    "Create presentation from file",
+    "Create a presentation from /[Word document name] for a 10-minute briefing.",
+    "Add a slide summarising the risks in this document."
+   ],
+   "limits": [
+    "Works best with Word documents smaller than 24 MB.",
+    "Use Word Styles (such as headings) so Copilot can split the document into slides.",
+    "Needs a Microsoft Copilot (work) licence for the file route."
+   ],
+   "source": {
+    "label": "Create a new presentation with Copilot in PowerPoint",
+    "url": "https://support.microsoft.com/en-gb/copilot-powerpoint"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Open Copilot pane",
+    "Create from file",
+    "Pick Word file",
+    "Review slides"
+   ]
+  },
+  {
+   "id": "powerpoint-edit-with-copilot",
+   "app": "powerpoint",
+   "title": "Edit with Copilot (plan, change, review)",
+   "summary": "Edit with Copilot (formerly called Agent Mode) takes natural-language requests and plans, makes and reviews changes across a deck, such as restructuring it or rewriting slides for clarity.",
+   "status": "preview",
+   "where": "",
+   "steps": [
+    "Open your Office app and sign in with a Copilot-enabled account.",
+    "In the Copilot prompt box, select Tools, then select Edit with Copilot.",
+    "Type a clear request with specific details.",
+    "Wait while Copilot builds the content, then review it."
+   ],
+   "prompts": [
+    "Create a 7-slide executive brief on [your topic], with a title slide, key insights, risks and mitigations, and next steps.",
+    "Rewrite these slides so they can be presented in five minutes.",
+    "Restructure this deck so the recommendation comes first."
+   ],
+   "limits": [
+    "A Microsoft Tech Community post (March 2026) said it was on the web first with desktop rollout coming and made-default-on coming. I could not confirm current desktop status, so I tagged it cautiously as preview.",
+    "It uses templates from the Organization Asset Library or Copilot Brand Kits, or can work without a template.",
+    "Microsoft's support page says editing with Copilot uses Anthropic models, while the Tech Community post said OpenAI at the time. Treat model details as changing."
+   ],
+   "source": {
+    "label": "Get started editing with Copilot in Office",
+    "url": "https://support.microsoft.com/topic/6d043333-6eeb-49d8-a80c-681d29ab7c04"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Open Copilot",
+    "Select Tools",
+    "Edit with Copilot",
+    "Type request"
+   ]
+  },
+  {
+   "id": "powerpoint-design-image-summarise",
+   "app": "powerpoint",
+   "title": "Change the design, add images, summarise",
+   "summary": "Ask Copilot to restyle the whole deck, add a slide or a picture, or list the main ideas of a presentation.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Open the Copilot pane.",
+    "To restyle, ask Copilot to Try a new design. You can repeat it until you like the style.",
+    "To add content, ask for a new slide or an image in a prompt.",
+    "To get the main points, ask Copilot to Summarize this presentation."
+   ],
+   "prompts": [
+    "Try a new design.",
+    "Add a slide about the history of Women's Olympic Soccer.",
+    "Add an image of a store under construction.",
+    "Summarize this presentation."
+   ],
+   "limits": [
+    "Needs an eligible Microsoft 365 subscription and/or Microsoft Copilot license.",
+    "The Organize this presentation feature was being retired on 14 July 2025, so do not rely on it.",
+    "The page gives no numeric limits. Copilot output may be unexpected or inaccurate, so verify it."
+   ],
+   "source": {
+    "label": "Welcome to Copilot in PowerPoint",
+    "url": "https://support.microsoft.com/en-US/PowerPoint/welcome-to-copilot-in-powerpoint"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Open Copilot pane",
+    "Type request",
+    "Review result",
+    "Repeat if needed"
+   ]
+  }
+ ],
+ "issues": [
+  {
+   "app": "word",
+   "level": "confirmed",
+   "text": "Copilot in Word supports fewer languages than Word itself, and may be off if your organisation has restricted it.",
+   "source": {
+    "label": "Welcome to Copilot in Word",
+    "url": "https://support.microsoft.com/en-us/word/welcome-to-copilot-in-word"
+   }
+  },
+  {
+   "app": "excel",
+   "level": "confirmed",
+   "text": "The COPILOT function was removed from 14 September 2026. Cells that recalculate show #NAME?, while old results stay as saved values.",
+   "source": {
+    "label": "COPILOT Function",
+    "url": "https://support.microsoft.com/en-us/excel/copilot-function"
+   }
+  },
+  {
+   "app": "excel",
+   "level": "confirmed",
+   "text": "Edit mode on Excel for iPad and iPhone is described as rolling out to production. iPhone and Android are chat only.",
+   "source": {
+    "label": "Get started with Copilot in Excel",
+    "url": "https://support.microsoft.com/en-GB/copilot-excel"
+   }
+  },
+  {
+   "app": "powerpoint",
+   "level": "community",
+   "text": "Brand kits have reportedly disappeared, failed to open or stopped appearing. No fix date was given.",
+   "source": {
+    "label": "PowerPoint: Edit with Copilot, Brand Kit and image gen overview",
+    "url": "https://techcommunity.microsoft.com/t5/driving-adoption-blog/powerpoint-edit-with-copilot-brand-kit-and-image-gen-overview/ba-p/4505685"
+   }
+  }
+ ],
+ "changes": [
+  {
+   "date": "2026-09-14",
+   "text": "The COPILOT function stopped being available in Excel. Use Copilot in Excel chat instead.",
+   "source": {
+    "label": "COPILOT Function",
+    "url": "https://support.microsoft.com/en-us/excel/copilot-function"
+   }
+  }
+ ]
+}

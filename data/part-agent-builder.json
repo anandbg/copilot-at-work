@@ -1,0 +1,437 @@
+{
+ "features": [
+  {
+   "id": "agent-builder-create",
+   "app": "agent-builder",
+   "title": "Stage 1: Create an agent",
+   "summary": "Agent Builder is the simple tool inside Microsoft 365 Copilot for building your own agent. You can describe the agent in plain words, fill in a form, or start from a template.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Open Microsoft 365 Copilot (microsoft365.com/chat, office.com/chat or the Teams desktop or web app) and select New agent.",
+    "To describe it: type what you want on the Describe tab. Copilot fills in the name, description and instructions for you.",
+    "To fill it in yourself: select Skip to configure to open the Configure tab.",
+    "To save time: under Start with a template, pick a template. The agent is created for you.",
+    "When it is ready, select Create. The agent is private to you until you share it."
+   ],
+   "prompts": [
+    "Create an agent that summarises my daily emails and includes attachments.",
+    "Create an agent that helps new starters in my team find onboarding information.",
+    "Update the agent to summarise Teams chats instead of emails."
+   ],
+   "limits": [
+    "Not available on mobile versions of the apps and sites (Agent Builder overview page).",
+    "The Describe (natural language) experience only works if your Microsoft 365 language is on the supported list. Otherwise use Configure.",
+    "Name: 30 characters. Description: 1,000 characters."
+   ],
+   "source": {
+    "label": "Build agents in Agent Builder (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Select New agent",
+    "Describe or Configure",
+    "Refine",
+    "Select Create"
+   ]
+  },
+  {
+   "id": "agent-builder-instructions",
+   "app": "agent-builder",
+   "title": "Stage 2: Write the instructions",
+   "summary": "Instructions tell the agent what its job is and how to do it. If you use the Describe tab, Copilot writes them for you. You can then edit them on the Configure tab.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Open the agent and go to the Configure tab.",
+    "Find the Instructions box. Read what Copilot wrote if you used Describe.",
+    "State the job, the steps, and how the answer should look.",
+    "Add one or two examples of a good answer.",
+    "Test on the Try it tab and edit again."
+   ],
+   "prompts": [
+    "Paste this into Instructions (example): You are the Team Onboarding Buddy. Help new starters in my team. Answer only from the knowledge sources I have added. Steps: 1) Ask which role the person has if they have not said. 2) Give a short checklist of what to do in week one. 3) Point to the document the answer came from. Keep answers under 150 words, in plain UK English, with short bullet points. If the answer is not in the sources, say 'I could not find that' and suggest who to ask. Never guess.",
+    "Make my instructions shorter and clearer.",
+    "Add an example answer to the instructions."
+   ],
+   "limits": [
+    "Instructions: 8,000 characters maximum.",
+    "Description: 1,000 characters. It helps Copilot pick your agent, so keep it short and precise."
+   ],
+   "source": {
+    "label": "Build agents in Agent Builder (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Open Configure",
+    "Edit Instructions",
+    "Select Try it"
+   ]
+  },
+  {
+   "id": "agent-builder-knowledge",
+   "app": "agent-builder",
+   "title": "Stage 3: Add knowledge sources",
+   "summary": "Knowledge is the material the agent answers from. You can add SharePoint and OneDrive content, files from your device, public websites, Teams chats and meetings, email and connectors.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "On the Configure tab, find the Knowledge section.",
+    "Use Search to find items, Enter URL to paste a link, Browse (Attach cloud files) for SharePoint or OneDrive, or Upload for files from your device.",
+    "On the Describe tab, select the plus sign (+) in the chat box instead. Choose Add work content, Upload images and files, or Attach cloud files.",
+    "Wait if a file shows Preparing. The agent will not use it until it is ready.",
+    "To make the agent lean on your sources, turn on Only use specified sources."
+   ],
+   "prompts": [
+    "Use only the files in my team's onboarding folder to answer questions.",
+    "Add this SharePoint site as a source and answer from it first.",
+    "What does the holiday policy say about carrying over leave?"
+   ],
+   "limits": [
+    "Per agent: 4 public website URLs, 100 SharePoint files, 1 SharePoint list, 50 OneDrive files, 5 Teams chats and 5 meetings, 20 uploaded files.",
+    "Web addresses can be two levels deep at most and cannot contain query parameters.",
+    "The agent respects each person's permissions. If a user cannot open a file, the agent will not use it for them.",
+    "Embedded file size limits: 512 MB for Word, PDF, PowerPoint and text files, 30 MB for Excel files. If Restricted SharePoint Search is on, SharePoint cannot be a knowledge source."
+   ],
+   "source": {
+    "label": "Add knowledge sources to an agent in Agent Builder (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-knowledge"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Open Knowledge",
+    "Pick source",
+    "Wait for Preparing",
+    "Ask question"
+   ]
+  },
+  {
+   "id": "agent-builder-test",
+   "app": "agent-builder",
+   "title": "Stage 4: Test on the Try it tab",
+   "summary": "Try it is a live copy of your agent inside the builder. Ask real questions, check the answers against your sources, and keep editing until it behaves.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Give the agent a name, description and instructions. Try it only turns on once these exist.",
+    "Select the Try it tab.",
+    "Select a suggested prompt or type your own question.",
+    "Check the answer matches the source. Use the thumbs up or down on the reply to send feedback.",
+    "Select New chat to start again, then change instructions or knowledge and retest."
+   ],
+   "prompts": [
+    "What should I do in my first week?",
+    "Where did that answer come from?",
+    "Ask something your sources do not cover, to check the agent says it cannot find it."
+   ],
+   "limits": [
+    "Some features do not work in Try it, such as sharing prompts, feedback on the agent itself, and @mentioning other agents. Use them after you create the agent.",
+    "Image generation does not currently work in Try it. Test it after you create the agent.",
+    "Newly uploaded SharePoint or OneDrive files show Preparing and are ignored until ready."
+   ],
+   "source": {
+    "label": "Build agents in Agent Builder (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Select Try it",
+    "Ask question",
+    "Check answer",
+    "Edit and retry"
+   ]
+  },
+  {
+   "id": "agent-builder-share",
+   "app": "agent-builder",
+   "title": "Stage 5: Share your agent",
+   "summary": "Sharing gives named people or groups direct access to your agent. You choose who can chat and who can edit.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Select Create. A message confirms the agent is private to you.",
+    "Select Share to open the share dialog.",
+    "In Add a name, group, or email, enter the people or group.",
+    "Set the role: Can chat (use only) or Can edit (owner). Leave Send notification ticked if you want them emailed.",
+    "Select Add. You can also use Copy chat link."
+   ],
+   "prompts": [
+    "Share the chat link with my team and ask them to try three questions.",
+    "Make my colleague a Can edit owner so we can maintain it together.",
+    "After editing, select Update so shared users see the changes."
+   ],
+   "limits": [
+    "A group can only be added as Can chat. Add people one by one to make them owners.",
+    "Your admin may limit who can share, or turn off Org-wide sharing for chat access. Choices are all users (default), specific users or groups, or no users.",
+    "People need the right Copilot licence for the agent's capabilities, or they may see an error.",
+    "SharePoint files you added are only shared automatically when you share with specific security groups, not everyone in the organisation (Agent Builder overview page, known limitations)."
+   ],
+   "source": {
+    "label": "Share and manage agents built in Agent Builder (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Select Share",
+    "Add people",
+    "Choose role",
+    "Select Add"
+   ]
+  },
+  {
+   "id": "agent-builder-publish",
+   "app": "agent-builder",
+   "title": "Publish to your organisation's catalogue",
+   "summary": "To make an agent findable by everyone at work, submit it to your org catalogue. An admin reviews it and, if approved, lists it under Built by your org in the Agent Store.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Go to All agents, pick your agent and select Edit. Select Update if there are unpublished changes.",
+    "Select the More ellipses (...) and then Submit to your org catalog.",
+    "Fill in Display name, Short description, Developer name, Creator website, Privacy statement and Terms of use.",
+    "Select Continue. The dialog shows Submitted for admin approval.",
+    "Check the status later: Waiting for approval, Approved, or Rejected by your admin."
+   ],
+   "prompts": [
+    "Short description example (80 characters max): Answers new starter questions from our onboarding pages.",
+    "If your agent reads personal email or Teams chats, say so in the short description.",
+    "After approval, open All agents, find your agent under Built by your org, and copy its link."
+   ],
+   "limits": [
+    "The menu item is disabled until you have published the agent at least once.",
+    "Display name: 30 characters. Short description: 80 characters. Developer name: 32 characters.",
+    "Later edits only reach the Agent Store after you resubmit and an admin approves."
+   ],
+   "source": {
+    "label": "Submit agents from Agent Builder to your org catalog (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-submit-to-org-catalog"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Select Edit",
+    "Open More menu",
+    "Submit to catalog",
+    "Wait for approval"
+   ]
+  },
+  {
+   "id": "agent-builder-code-interpreter",
+   "app": "agent-builder",
+   "title": "Tool: Code interpreter (Create documents, charts, and code)",
+   "summary": "This lets the agent write and run Python code to do sums, analyse data, draw charts and make files you can download. It is on by default in Agent Builder.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Open the Configure tab and look at the Capabilities section.",
+    "Check the toggle next to Create documents, charts, and code is on.",
+    "On Try it, upload a file such as an Excel sheet and ask for a chart.",
+    "Select the Code button on the reply if you want to see the Python it ran.",
+    "Download the file from the link in the reply."
+   ],
+   "prompts": [
+    "Create a bar chart and line graph of my uploaded sales data.",
+    "Create a spreadsheet with a multiplication table for numbers 1 through 10 and give me the Excel file.",
+    "Create a table of 10 fake financial transactions including date, amount, merchant, and category."
+   ],
+   "limits": [
+    "Files it makes are hosted temporarily and only available during the session. Download them straight away.",
+    "Input files can be Word, Excel, PowerPoint, PDF, CSV/TSV or TXT.",
+    "Learn describes it as always enabled in Agent Builder, but the build page also shows a toggle. Check the Capabilities section in your own tenant."
+   ],
+   "source": {
+    "label": "Code interpreter capability (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/code-interpreter"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Open Capabilities",
+    "Create documents toggle",
+    "Upload data",
+    "Download file"
+   ]
+  },
+  {
+   "id": "agent-builder-image-generator",
+   "app": "agent-builder",
+   "title": "Tool: Image generator (Create images)",
+   "summary": "This lets the agent make pictures from a text prompt, using Designer. It makes four images per prompt and you can ask for changes.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Open the Configure tab and look at the Capabilities section.",
+    "Check the toggle next to Create images is on.",
+    "Create your agent. Image generation does not currently work on Try it, so test it after you publish the agent.",
+    "Ask for an image. Select one to see it full size.",
+    "Ask a follow-up to change it, then download or copy the one you want."
+   ],
+   "prompts": [
+    "Create an image of a serene beach at sunset with palm trees and gentle waves.",
+    "Design a flyer for a summer music festival and add a date for May 15, 2024.",
+    "Include a tennis ball."
+   ],
+   "limits": [
+    "Does not currently work in the Try it test pane. Test after you publish the agent.",
+    "Learn says it is always enabled in Agent Builder. Availability still depends on your licence and tenant settings."
+   ],
+   "source": {
+    "label": "Image generator capability (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/image-generator"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Open Capabilities",
+    "Create images toggle",
+    "Create agent",
+    "Ask for image"
+   ]
+  },
+  {
+   "id": "agent-builder-skills",
+   "app": "agent-builder",
+   "title": "Tool: Skills (reusable task packages)",
+   "summary": "A skill is a packaged, repeatable task for the agent. It is a folder with a SKILL.md file of instructions, plus optional files and scripts. You can ask Agent Builder to create one, or upload a .zip.",
+   "status": "unstated",
+   "where": "",
+   "steps": [
+    "In Copilot chat, select Agents & Skills, then New agent.",
+    "In the Message Agent Builder box, ask for a reusable workflow, or open the Configure tab, expand Skills and select Add.",
+    "If uploading, add the complete .zip package. Do not upload SKILL.md on its own.",
+    "Review the skill name, description, instructions and files.",
+    "Try a prompt on the Try it tab that should use the skill."
+   ],
+   "prompts": [
+    "Create an agent that helps my team write release notes. Add a reusable skill that always follows the same steps: group changes into Features, Fixes and Other, then format a clean Markdown changelog.",
+    "Add a skill that turns a list of notes into our standard weekly update.",
+    "Use the weekly update skill on these notes."
+   ],
+   "limits": [
+    "Up to 8 skills per agent. Each .zip is up to 50 MB, with up to 25 MB per file, 350 files in total and folders no deeper than 3 levels. Skill instructions must be under 20,000 characters.",
+    "Skill scripts run in a sandbox with no internet access and no package installs. Skills cannot be reused across agents.",
+    "Microsoft's pages do not say whether skills are in preview or generally available (checked 2026-11-05), so check with your admin. If your tenant uses Purview Information Barriers, end users cannot add skills."
+   ],
+   "source": {
+    "label": "Add skills to your declarative agent in Agent Builder (Microsoft Learn) and Skills in declarative agents",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Open Configure",
+    "Expand Skills",
+    "Select Add",
+    "Upload zip"
+   ]
+  },
+  {
+   "id": "agent-builder-who-can-create",
+   "app": "agent-builder",
+   "title": "Who can build, and what your licence allows",
+   "summary": "What you can add depends on your licence. Admins can also switch Agent Builder on or off and control sharing. Check this before you promise a colleague an agent.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Check you have a Microsoft 365 Copilot licence. It unlocks all knowledge sources.",
+    "If Agent Builder is missing, ask your admin. They can control whether it is available.",
+    "If Org-wide sharing for chat access is greyed out, an admin policy is limiting it.",
+    "Ask your admin about agent controls in the Microsoft 365 admin center."
+   ],
+   "prompts": [
+    "Ask your admin: Is Agent Builder turned on for me?",
+    "Ask your admin: Can I use Org-wide sharing, or must I share with named people?",
+    "Ask your admin: Which knowledge sources and connectors are enabled for us?"
+   ],
+   "limits": [
+    "With a Microsoft 365 Copilot licence: code interpreter, image generator, web search, connectors, SharePoint, uploaded files, Dataverse, email, people, Teams messages and meetings are all listed as available.",
+    "Without a Copilot licence but with Copilot Chat: web search, code interpreter and image generator only. SharePoint, files and connectors need pay-as-you-go billing. Email, people and Teams need the full licence.",
+    "Agents in Agent Builder do not use your tenant's Dataverse storage, and Customer Managed Keys are not supported."
+   ],
+   "source": {
+    "label": "Agent capabilities and licensing models (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Check licence",
+    "Ask admin",
+    "Open Agent Builder"
+   ]
+  },
+  {
+   "id": "agent-builder-first-agent",
+   "app": "agent-builder",
+   "title": "Build your first agent: a Team Onboarding Buddy",
+   "summary": "A worked example from start to finish. You will describe an agent, point it at one SharePoint folder, test it and share it with your team.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Select New agent. On the Describe tab, type the first prompt below.",
+    "Open the Configure tab. Under Knowledge, use Enter URL or Browse to add your team's onboarding folder.",
+    "Paste the example instructions from Stage 2 into Instructions. Turn on Only use specified sources.",
+    "Select Try it and ask the test questions. Fix anything wrong, then select Create.",
+    "Select Share, add your team as Can chat, and select Add."
+   ],
+   "prompts": [
+    "Create an agent called Team Onboarding Buddy that helps new starters in my team find what they need in their first week.",
+    "What do I need to do on my first day?",
+    "Who do I ask about expenses?",
+    "What is the capital of Mars? (a check that it admits when the answer is not in your sources)"
+   ],
+   "limits": [
+    "Name is capped at 30 characters.",
+    "Make sure your team can open the folder. The agent only uses files the person asking is allowed to see.",
+    "Test with real questions before sharing. Agents can still get things wrong, so keep a human check on anything important."
+   ],
+   "source": {
+    "label": "Build agents in Agent Builder (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "New agent",
+    "Add knowledge",
+    "Try it",
+    "Share"
+   ]
+  }
+ ],
+ "issues": [
+  {
+   "app": "agent-builder",
+   "level": "confirmed",
+   "text": "Agent Builder cannot author actions that connect to outside services. To add actions, connectors or workflows, copy the agent to Copilot Studio.",
+   "source": {
+    "label": "Agent Builder overview (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder"
+   }
+  },
+  {
+   "app": "agent-builder",
+   "level": "confirmed",
+   "text": "Agents built in Agent Builder cannot be used in Teams group or 1:1 chats.",
+   "source": {
+    "label": "Agent Builder overview (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder"
+   }
+  },
+  {
+   "app": "agent-builder",
+   "level": "confirmed",
+   "text": "Image generation does not currently work in the Try it test pane, so you cannot check it before you create the agent.",
+   "source": {
+    "label": "Image generator capability (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/image-generator"
+   }
+  },
+  {
+   "app": "agent-builder",
+   "level": "confirmed",
+   "text": "Colleagues who cannot open the SharePoint files you added will not get answers from them. Auto-sharing of those files only works when you share with specific security groups, not everyone. If it fails, the agent is still shared and the file owner must grant access in SharePoint. Also, the Web content toggle stays on screen even when an admin has blocked web search, and the admin policy wins.",
+   "source": {
+    "label": "Agent Builder overview (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder"
+   }
+  }
+ ],
+ "changes": []
+}

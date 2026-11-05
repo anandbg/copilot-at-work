@@ -1,128 +1,228 @@
 {
-  "updated": "2026-11-05",
-  "licenceNote": "Microsoft 365 Copilot (Premium) is the paid work licence. It gives priority access and automatic use of your work data. Without it you get the Basic experience, which is more limited.",
-  "licenceSource": {"label": "Microsoft Learn: What is Microsoft Copilot (updated 28 Oct 2026)", "url": "https://learn.microsoft.com/en-us/copilot/plan/copilot-overview"},
-  "apps": [
-    {"id": "teams", "name": "Teams"},
-    {"id": "outlook", "name": "Outlook", "soon": true},
-    {"id": "word", "name": "Word", "soon": true},
-    {"id": "excel", "name": "Excel", "soon": true},
-    {"id": "powerpoint", "name": "PowerPoint", "soon": true},
-    {"id": "onenote", "name": "OneNote", "soon": true}
-  ],
-  "features": [
-    {
-      "id": "teams-meeting-live", "app": "teams",
-      "title": "Ask Copilot during a Teams meeting",
-      "summary": "Catch up if you join late, or ask what has been decided so far, without interrupting anyone. Your questions are private to you.",
-      "status": "available", "where": "meeting-bar",
-      "steps": [
-        "In the meeting controls, select the Copilot icon.",
-        "Select View prompts for ideas, or type your own question.",
-        "Joined more than 5 minutes late? Copilot may offer a catch-up. Select Open Copilot and wait for the summary.",
-        "On the Teams desktop app, select Open private Copilot in new window to keep it beside the meeting."
-      ],
-      "prompts": [
-        "Where do we disagree on this topic?",
-        "What questions can I ask to move the meeting forward?",
-        "List the ideas, including people's feedback, from transcript and chat.",
-        "Create a table with the ideas discussed and their pros and cons."
-      ],
-      "limits": [
-        "The meeting organiser controls Copilot in Online meeting options > Copilot and other AI. The choices are Allow Copilot and Facilitator, Only during the meeting, or Off.",
-        "Turn on live transcription to ask about the meeting afterwards. Without it, Copilot works during the meeting only.",
-        "Does not work in meetings hosted outside your organisation.",
-        "Setting the organiser option to Off also turns off recording and transcription."
-      ],
-      "source": {"label": "Microsoft Support: Get started with Copilot in Teams meetings", "url": "https://support.microsoft.com/en-us/office/get-started-with-copilot-in-microsoft-teams-meetings-0bf9dd3c-96f7-44e2-8bb8-790bedf066b1"},
-      "checked": "2026-11-05"
-    },
-    {
-      "id": "teams-meeting-after", "app": "teams",
-      "title": "Recap a meeting afterwards",
-      "summary": "Ask for decisions, actions and who said what once the meeting has ended.",
-      "status": "available", "where": "chat-top-right",
-      "steps": [
-        "Open the meeting chat, then select Open Copilot in the upper-right corner.",
-        "Or open the Recap tab and select Copilot. You see the same conversation.",
-        "Send a prompt. If the meeting was transcribed, Copilot uses the transcript. If not, it uses the meeting chat only."
-      ],
-      "prompts": [
-        "Summarise this meeting in five bullets.",
-        "List every action item with the owner and the date mentioned.",
-        "What decisions were made, and what is still open?",
-        "Draft a short follow-up message to attendees."
-      ],
-      "limits": [
-        "Asking about a meeting afterwards needs a transcript. Switch it on during the meeting.",
-        "Intelligent recap needs Teams Premium or a Microsoft Copilot licence.",
-        "In recurring meetings, earlier conversation history can be lost if a later meeting is transcribed, or a transcript is no longer available.",
-        "Sensitivity labels, or the Turn off copying and forwarding option, block exporting a response to Word or Excel."
-      ],
-      "source": {"label": "Microsoft Support: Get started with Copilot in Teams meetings", "url": "https://support.microsoft.com/en-us/office/get-started-with-copilot-in-microsoft-teams-meetings-0bf9dd3c-96f7-44e2-8bb8-790bedf066b1"},
-      "checked": "2026-11-05"
-    },
-    {
-      "id": "teams-chat", "app": "teams",
-      "title": "Catch up on a chat",
-      "summary": "Turn a long one-to-one or group chat into the few lines you need.",
-      "status": "available", "where": "chat-top-right",
-      "steps": [
-        "Select Chat on the left, then open a chat.",
-        "Select Open Copilot in the upper-right corner.",
-        "Pick a suggested prompt, or select Show more, or type your own, then Send.",
-        "Add a time frame such as last month to narrow the answer.",
-        "Use Copy to paste the answer elsewhere, or Sources to jump to the message it came from."
-      ],
-      "prompts": [
-        "Summarize what I've missed.",
-        "What were the key takeaways from last month?",
-        "What did [name] say about the deadline?",
-        "What links were shared?"
-      ],
-      "limits": [
-        "Copilot uses only the chat you have open. The default history is 30 days unless you say otherwise.",
-        "It cannot summarise images, Loop components or files shared in the chat.",
-        "If your time frame is too long, select Generate next response."
-      ],
-      "source": {"label": "Microsoft Support: Use Copilot in Teams chat and channels", "url": "https://support.microsoft.com/office/cccccca2-9dc8-49a9-ab76-b1a8ee21486c"},
-      "checked": "2026-11-05"
-    },
-    {
-      "id": "teams-channel", "app": "teams",
-      "title": "Summarise a channel thread",
-      "summary": "Get the point of a long reply thread in one go.",
-      "status": "available", "where": "channel-thread",
-      "steps": [
-        "Open the team and channel.",
-        "Quick way: select More actions (the three dots) on the post, then Summarize thread.",
-        "Or open the thread with the link below the post, then select Summarize thread at the bottom.",
-        "To ask your own question, select Open Copilot in the upper-right corner, then More prompts or type."
-      ],
-      "prompts": [
-        "Summarize this thread and list who is asking for what.",
-        "What is the latest answer to the original question?",
-        "Which points are still unresolved?"
-      ],
-      "limits": [
-        "A thread needs at least 1,000 characters of text to be summarised.",
-        "Images, Loop components and files in the thread are not summarised."
-      ],
-      "source": {"label": "Microsoft Support: Use Copilot in Teams chat and channels", "url": "https://support.microsoft.com/office/cccccca2-9dc8-49a9-ab76-b1a8ee21486c"},
-      "checked": "2026-11-05"
-    }
-  ],
-  "changes": [
-    {"date": "2026-10-28", "text": "Microsoft Learn now names the licences Copilot Chat (Basic), Microsoft 365 Copilot (Basic) and Microsoft 365 Copilot (Premium). The Copilot app address is moving to copilot.cloud.microsoft.", "source": {"label": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/copilot/plan/copilot-overview"}}
-  ],
-  "issues": [
-    {"app": "teams", "level": "confirmed", "text": "The meeting organiser, not you, decides whether Copilot can run in that meeting. If the Copilot button is missing, ask the organiser to check Copilot and other AI in the meeting options.", "source": {"label": "Microsoft Support", "url": "https://support.microsoft.com/en-us/office/get-started-with-copilot-in-microsoft-teams-meetings-0bf9dd3c-96f7-44e2-8bb8-790bedf066b1"}},
-    {"app": "teams", "level": "community", "text": "Admin blogs report that since late 2025 the default lets Copilot run in meetings without saving a transcript. If you want to ask questions afterwards, turn on transcription yourself.", "source": {"label": "Office 365 for IT Pros", "url": "https://office365itpros.com/2025/09/15/transcription-teams-meetings/"}},
-    {"app": "teams", "level": "community", "text": "Users on Microsoft Tech Community report that transcription sometimes fails to start in meetings, so Copilot has nothing to read.", "source": {"label": "Microsoft Tech Community thread", "url": "https://techcommunity.microsoft.com/discussions/microsoft365copilot/teams-meeting---transcription-doesnt-work/4378911"}}
-  ],
-  "try": {
-    "title": "Try this today",
-    "text": "In your next Teams meeting, switch on transcription, select the Copilot icon, and ask: List the ideas, including people's feedback, from transcript and chat.",
-    "feature": "teams-meeting-live"
+ "updated": "2026-11-05",
+ "licenceNote": "Microsoft 365 Copilot (Premium) is the paid work licence. It gives priority access and automatic use of your work data. Without it you get the Basic experience, which is more limited.",
+ "licenceSource": {
+  "label": "Microsoft Learn: What is Microsoft Copilot (updated 28 Oct 2026)",
+  "url": "https://learn.microsoft.com/en-us/copilot/plan/copilot-overview"
+ },
+ "apps": [
+  {
+   "id": "teams",
+   "name": "Teams"
+  },
+  {
+   "id": "chat",
+   "name": "Copilot Chat"
+  },
+  {
+   "id": "outlook",
+   "name": "Outlook"
+  },
+  {
+   "id": "word",
+   "name": "Word"
+  },
+  {
+   "id": "excel",
+   "name": "Excel"
+  },
+  {
+   "id": "powerpoint",
+   "name": "PowerPoint"
+  },
+  {
+   "id": "onenote",
+   "name": "OneNote"
+  },
+  {
+   "id": "agent-builder",
+   "name": "Agent Builder"
   }
+ ],
+ "features": [
+  {
+   "id": "teams-meeting-live",
+   "app": "teams",
+   "title": "Ask Copilot during a Teams meeting",
+   "summary": "Catch up if you join late, or ask what has been decided so far, without interrupting anyone. Your questions are private to you.",
+   "status": "available",
+   "where": "meeting-bar",
+   "steps": [
+    "In the meeting controls, select the Copilot icon.",
+    "Select View prompts for ideas, or type your own question.",
+    "Joined more than 5 minutes late? Copilot may offer a catch-up. Select Open Copilot and wait for the summary.",
+    "On the Teams desktop app, select Open private Copilot in new window to keep it beside the meeting."
+   ],
+   "prompts": [
+    "Where do we disagree on this topic?",
+    "What questions can I ask to move the meeting forward?",
+    "List the ideas, including people's feedback, from transcript and chat.",
+    "Create a table with the ideas discussed and their pros and cons."
+   ],
+   "limits": [
+    "The meeting organiser controls Copilot in Online meeting options > Copilot and other AI. The choices are Allow Copilot and Facilitator, Only during the meeting, or Off.",
+    "Turn on live transcription to ask about the meeting afterwards. Without it, Copilot works during the meeting only.",
+    "Does not work in meetings hosted outside your organisation.",
+    "Setting the organiser option to Off also turns off recording and transcription."
+   ],
+   "source": {
+    "label": "Microsoft Support: Get started with Copilot in Teams meetings",
+    "url": "https://support.microsoft.com/en-us/office/get-started-with-copilot-in-microsoft-teams-meetings-0bf9dd3c-96f7-44e2-8bb8-790bedf066b1"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Meeting controls",
+    "Copilot icon",
+    "View prompts"
+   ]
+  },
+  {
+   "id": "teams-meeting-after",
+   "app": "teams",
+   "title": "Recap a meeting afterwards",
+   "summary": "Ask for decisions, actions and who said what once the meeting has ended.",
+   "status": "available",
+   "where": "chat-top-right",
+   "steps": [
+    "Open the meeting chat, then select Open Copilot in the upper-right corner.",
+    "Or open the Recap tab and select Copilot. You see the same conversation.",
+    "Send a prompt. If the meeting was transcribed, Copilot uses the transcript. If not, it uses the meeting chat only."
+   ],
+   "prompts": [
+    "Summarise this meeting in five bullets.",
+    "List every action item with the owner and the date mentioned.",
+    "What decisions were made, and what is still open?",
+    "Draft a short follow-up message to attendees."
+   ],
+   "limits": [
+    "Asking about a meeting afterwards needs a transcript. Switch it on during the meeting.",
+    "Intelligent recap needs Teams Premium or a Microsoft Copilot licence.",
+    "In recurring meetings, earlier conversation history can be lost if a later meeting is transcribed, or a transcript is no longer available.",
+    "Sensitivity labels, or the Turn off copying and forwarding option, block exporting a response to Word or Excel."
+   ],
+   "source": {
+    "label": "Microsoft Support: Get started with Copilot in Teams meetings",
+    "url": "https://support.microsoft.com/en-us/office/get-started-with-copilot-in-microsoft-teams-meetings-0bf9dd3c-96f7-44e2-8bb8-790bedf066b1"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Meeting chat",
+    "Open Copilot",
+    "Send prompt"
+   ]
+  },
+  {
+   "id": "teams-chat",
+   "app": "teams",
+   "title": "Catch up on a chat",
+   "summary": "Turn a long one-to-one or group chat into the few lines you need.",
+   "status": "available",
+   "where": "chat-top-right",
+   "steps": [
+    "Select Chat on the left, then open a chat.",
+    "Select Open Copilot in the upper-right corner.",
+    "Pick a suggested prompt, or select Show more, or type your own, then Send.",
+    "Add a time frame such as last month to narrow the answer.",
+    "Use Copy to paste the answer elsewhere, or Sources to jump to the message it came from."
+   ],
+   "prompts": [
+    "Summarize what I've missed.",
+    "What were the key takeaways from last month?",
+    "What did [name] say about the deadline?",
+    "What links were shared?"
+   ],
+   "limits": [
+    "Copilot uses only the chat you have open. The default history is 30 days unless you say otherwise.",
+    "It cannot summarise images, Loop components or files shared in the chat.",
+    "If your time frame is too long, select Generate next response."
+   ],
+   "source": {
+    "label": "Microsoft Support: Use Copilot in Teams chat and channels",
+    "url": "https://support.microsoft.com/office/cccccca2-9dc8-49a9-ab76-b1a8ee21486c"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Chat",
+    "Open Copilot",
+    "Pick prompt"
+   ]
+  },
+  {
+   "id": "teams-channel",
+   "app": "teams",
+   "title": "Summarise a channel thread",
+   "summary": "Get the point of a long reply thread in one go.",
+   "status": "available",
+   "where": "channel-thread",
+   "steps": [
+    "Open the team and channel.",
+    "Quick way: select More actions (the three dots) on the post, then Summarize thread.",
+    "Or open the thread with the link below the post, then select Summarize thread at the bottom.",
+    "To ask your own question, select Open Copilot in the upper-right corner, then More prompts or type."
+   ],
+   "prompts": [
+    "Summarize this thread and list who is asking for what.",
+    "What is the latest answer to the original question?",
+    "Which points are still unresolved?"
+   ],
+   "limits": [
+    "A thread needs at least 1,000 characters of text to be summarised.",
+    "Images, Loop components and files in the thread are not summarised."
+   ],
+   "source": {
+    "label": "Microsoft Support: Use Copilot in Teams chat and channels",
+    "url": "https://support.microsoft.com/office/cccccca2-9dc8-49a9-ab76-b1a8ee21486c"
+   },
+   "checked": "2026-11-05",
+   "flow": [
+    "Channel post",
+    "More actions",
+    "Summarize thread"
+   ]
+  }
+ ],
+ "changes": [
+  {
+   "date": "2026-10-28",
+   "text": "Microsoft Learn now names the licences Copilot Chat (Basic), Microsoft 365 Copilot (Basic) and Microsoft 365 Copilot (Premium). The Copilot app address is moving to copilot.cloud.microsoft.",
+   "source": {
+    "label": "Microsoft Learn",
+    "url": "https://learn.microsoft.com/en-us/copilot/plan/copilot-overview"
+   }
+  }
+ ],
+ "issues": [
+  {
+   "app": "teams",
+   "level": "confirmed",
+   "text": "The meeting organiser, not you, decides whether Copilot can run in that meeting. If the Copilot button is missing, ask the organiser to check Copilot and other AI in the meeting options.",
+   "source": {
+    "label": "Microsoft Support",
+    "url": "https://support.microsoft.com/en-us/office/get-started-with-copilot-in-microsoft-teams-meetings-0bf9dd3c-96f7-44e2-8bb8-790bedf066b1"
+   }
+  },
+  {
+   "app": "teams",
+   "level": "community",
+   "text": "Admin blogs report that since late 2025 the default lets Copilot run in meetings without saving a transcript. If you want to ask questions afterwards, turn on transcription yourself.",
+   "source": {
+    "label": "Office 365 for IT Pros",
+    "url": "https://office365itpros.com/2025/09/15/transcription-teams-meetings/"
+   }
+  },
+  {
+   "app": "teams",
+   "level": "community",
+   "text": "Users on Microsoft Tech Community report that transcription sometimes fails to start in meetings, so Copilot has nothing to read.",
+   "source": {
+    "label": "Microsoft Tech Community thread",
+    "url": "https://techcommunity.microsoft.com/discussions/microsoft365copilot/teams-meeting---transcription-doesnt-work/4378911"
+   }
+  }
+ ],
+ "try": {
+  "title": "Try this today",
+  "text": "In your next Teams meeting, switch on transcription, select the Copilot icon, and ask: List the ideas, including people's feedback, from transcript and chat.",
+  "feature": "teams-meeting-live"
+ }
 }

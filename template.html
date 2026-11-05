@@ -37,11 +37,13 @@ button{cursor:pointer}
 .tags{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 10px}
 .tag{font-size:.78rem;font-weight:600;border-radius:999px;padding:3px 10px}
 .t-available{background:var(--okbg);color:var(--ok)}.t-preview{background:var(--prebg);color:var(--pre)}.t-roadmap{background:var(--roadbg);color:var(--road)}
-.t-lic{background:var(--soft);color:var(--mute);font-weight:500}
+.t-unstated{background:var(--warnbg);color:var(--warn)}.t-lic{background:var(--soft);color:var(--mute);font-weight:500}
 .cols{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
 @media(min-width:700px){.cols{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
 ol.steps{margin:6px 0 0;padding-left:1.3em}ol.steps li{margin:6px 0}
 h4{margin:16px 0 6px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0 4px;padding:0;list-style:none}.flow li{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:.88rem;display:flex;gap:6px;align-items:center}.flow li b{background:var(--brand);color:var(--brand-ink);border-radius:50%;width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;font-size:.75rem}.flow li.arr{background:none;border:0;padding:0;color:var(--mute)}
+.sep{border-top:2px solid var(--line);margin-top:10px}
 .pic{border:1px solid var(--line);border-radius:10px;background:var(--bg);padding:6px}
 .pic svg{width:100%;height:auto;display:block}
 .pic figcaption{font-size:.78rem;color:var(--mute);padding:4px 6px 2px}
@@ -77,13 +79,13 @@ footer{margin-top:40px;color:var(--mute);font-size:.88rem;border-top:1px solid v
   <label class="hide" for="q">Search this page</label>
   <input class="search" id="q" type="search" placeholder="Search, e.g. summarise or late" autocomplete="off">
   <div id="try"></div>
-  <p class="legend"><span class="tag t-available">Available</span> in general release <span class="tag t-preview">Preview</span> early, may change <span class="tag t-roadmap">Roadmap</span> announced, not yet here</p>
+  <p class="legend"><span class="tag t-available">Available</span> in general release <span class="tag t-preview">Preview</span> early, may change <span class="tag t-roadmap">Roadmap</span> announced, not yet here <span class="tag t-unstated">Status not stated</span> Microsoft does not say</p>
   <div id="cards"></div>
   <section class="block" id="changes-block"><h2>What changed recently</h2><div id="changes"></div></section>
   <section class="block" id="issues-block"><h2>Known problems and limits</h2><p class="sub">Confirmed means Microsoft says so. Community means people report it and Microsoft has not confirmed it.</p><div id="issues"></div></section>
   <section class="block"><h2>Your licence</h2><p id="lic"></p></section>
 </main>
-<footer>An unofficial learning page, not from Microsoft. Every card links to the Microsoft page it was checked against, with the date. Features differ by licence, tenant settings and app version, so what you see may differ. Pictures are simple drawings, not screenshots.</footer>
+<footer>An unofficial learning page, not from Microsoft. Every card links to the Microsoft page it was checked against, with the date. Features differ by licence, tenant settings and app version, so what you see may differ. Pictures are simple drawings, not screenshots. Prompts are examples: change the names and details to fit your work.</footer>
 </div>
 <script>
 const DATA = /*DATA*/null;
@@ -93,7 +95,7 @@ const store = { get(k,d){ try{ const v=localStorage.getItem(k); return v?JSON.pa
 let app = (location.hash.slice(1).split('/')[0]) || 'teams';
 if (!DATA.apps.some(a => a.id===app && !a.soon)) app = 'teams';
 let done = store.get('copilot-done', {});
-const TAGS = {available:'Available', preview:'Preview', roadmap:'Roadmap'};
+const TAGS = {available:'Available', preview:'Preview', roadmap:'Roadmap', unstated:'Status not stated'};
 const WHERE = {
   'meeting-bar':{cap:'Teams meeting: the Copilot icon is in the meeting controls at the top.', x:300,y:36,label:'Copilot icon'},
   'chat-top-right':{cap:'Teams chat: Open Copilot is in the upper-right corner.', x:372,y:78,label:'Open Copilot'},
@@ -113,12 +115,13 @@ function pic(f){
   <text x="${Math.max(8,Math.min(w.x-60,350))+52}" y="${w.y+37}" text-anchor="middle" font-size="12" fill="#fff" font-family="system-ui,sans-serif">${esc(w.label)}</text>
   </svg><figcaption>${esc(w.cap)} (drawing, not a screenshot)</figcaption></figure>`;
 }
+function flow(f){ if(!f.flow||!f.flow.length) return ''; return `<ol class="flow" aria-label="Path at a glance">${f.flow.map((s,i)=>`${i?'<li class="arr" aria-hidden="true">&#8594;</li>':''}<li><b>${i+1}</b>${esc(s)}</li>`).join('')}</ol>`; }
 function card(f){
   const lic = DATA.licenceShort || 'Needs a Microsoft 365 Copilot licence';
   return `<article class="card" id="${f.id}" data-text="${esc((f.title+' '+f.summary+' '+f.steps.join(' ')+' '+f.prompts.join(' ')).toLowerCase())}">
   <h3>${esc(f.title)}</h3>
   <div class="tags"><span class="tag t-${f.status}">${TAGS[f.status]}</span><span class="tag t-lic">${esc(lic)}</span></div>
-  <p style="margin:0 0 6px">${esc(f.summary)}</p>
+  <p style="margin:0 0 6px">${esc(f.summary)}</p>${flow(f)}
   <div class="cols"><div>
     <h4>Steps</h4><ol class="steps">${f.steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol>
     <h4>Prompts to copy</h4>${f.prompts.map(p=>`<div class="prompt"><span>${esc(p)}</span><button class="copy" type="button" data-copy="${esc(p)}">Copy</button></div>`).join('')}
@@ -139,6 +142,7 @@ function render(){
   $('#lic').innerHTML = `${esc(DATA.licenceNote)} <a href="${esc(DATA.licenceSource.url)}" target="_blank" rel="noopener">${esc(DATA.licenceSource.label)}</a>`;
   $('#upd').textContent = 'Updated ' + DATA.updated;
   progress(); filter();
+  const sel=$('.tab[aria-selected=true]'); if(sel&&sel.scrollIntoView) sel.scrollIntoView({inline:'center',block:'nearest'});
 }
 function progress(){ const n=DATA.features.length, d=DATA.features.filter(f=>done[f.id]).length; $('#prog').textContent = `You have tried ${d} of ${n}`; }
 function filter(){ const q=$('#q').value.trim().toLowerCase(); let shown=0; document.querySelectorAll('.card').forEach(c=>{ const m=!q||c.dataset.text.includes(q); c.classList.toggle('hide',!m); if(m) shown++; }); }
