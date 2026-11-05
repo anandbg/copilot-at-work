@@ -1,6 +1,38 @@
 {
  "features": [
   {
+   "id": "agent-builder-tour",
+   "app": "agent-builder",
+   "title": "Tour of the Configure screen",
+   "summary": "What you will see, top to bottom, when you build an agent on the Configure tab. Use it as a map before you start.",
+   "status": "available",
+   "where": "",
+   "flow": [
+    "Instructions",
+    "Skills",
+    "Knowledge",
+    "Suggested prompts"
+   ],
+   "steps": [
+    "Two tabs sit at the top: Configure to build, Preview to test.",
+    "Instructions: write what the agent does, its tone and its rules. Suggest improvements asks Copilot to tighten your text.",
+    "Skills: select Add to give the agent a packaged skill. The two Skills cards on this tab explain how to add one and how to create a new one.",
+    "Knowledge: select Add knowledge, or drop files onto the box. Under Work content you can switch Cloud files (your OneDrive and SharePoint files), Outlook and Teams on or off. Copilot connectors has its own switch.",
+    "Web search is a separate switch. By default it is off. Where your organisation blocks public websites it shows a warning, and agents cannot use public URLs as knowledge.",
+    "Attachments lets you add files. Suggested prompts lets you add title and message pairs. The screen shows three rows to start with."
+   ],
+   "prompts": [],
+   "limits": [
+    "Seen in a live work tenant on 5 November 2026, where web search was blocked and Copilot connectors were off. Your screen may differ with your licence, admin settings and app version.",
+    "Which knowledge sources you can use depends on your licence. See the licence card on this tab."
+   ],
+   "source": {
+    "label": "Seen in a live work tenant, 5 Nov 2026",
+    "url": ""
+   },
+   "checked": "2026-11-05"
+  },
+  {
    "id": "agent-builder-create",
    "app": "agent-builder",
    "title": "Stage 1: Create an agent",
@@ -35,38 +67,6 @@
     "Refine",
     "Select Create"
    ]
-  },
-  {
-   "id": "agent-builder-tour",
-   "app": "agent-builder",
-   "title": "Tour of the Configure screen",
-   "summary": "What you will see, top to bottom, when you build an agent on the Configure tab. Use it as a map before you start.",
-   "status": "available",
-   "where": "",
-   "flow": [
-    "Instructions",
-    "Skills",
-    "Knowledge",
-    "Suggested prompts"
-   ],
-   "steps": [
-    "Two tabs sit at the top: Configure to build, Preview to test.",
-    "Instructions: write what the agent does, its tone and its rules. Suggest improvements asks Copilot to tighten your text.",
-    "Skills: select Add to give the agent a packaged skill. The Skills card on this tab explains how to make one.",
-    "Knowledge: select Add knowledge, or drop files onto the box. Under Work content you can switch on or off Cloud files (your OneDrive and SharePoint files), Outlook, Teams and Copilot connectors.",
-    "Web search is a separate switch. If your organisation blocks public websites, it shows a warning and stays off. Copilot connectors can also be off, so ask your admin if you need them.",
-    "Attachments lets you add files. Suggested prompts lets you add title and message pairs. The screen shows three rows to start with."
-   ],
-   "prompts": [],
-   "limits": [
-    "Seen in a live work tenant on 5 November 2026, where web search was blocked and Copilot connectors were off. Your screen may differ with your licence, admin settings and app version.",
-    "Which knowledge sources you can use depends on your licence. See the licence card on this tab."
-   ],
-   "source": {
-    "label": "Seen in a live work tenant, 5 Nov 2026",
-    "url": ""
-   },
-   "checked": "2026-11-05"
   },
   {
    "id": "agent-builder-instructions",
@@ -111,10 +111,12 @@
    "where": "",
    "steps": [
     "On the Configure tab, find the Knowledge section.",
-    "Use Search to find items, Enter URL to paste a link, Browse (Attach cloud files) for SharePoint or OneDrive, or Upload for files from your device.",
-    "On the Describe tab, select the plus sign (+) in the chat box instead. Choose Add work content, Upload images and files, or Attach cloud files.",
-    "Wait if a file shows Preparing. The agent will not use it until it is ready.",
-    "To make the agent lean on your sources, turn on Only use specified sources."
+    "Select Add knowledge, or drop files onto the box.",
+    "Under Work content, switch on or off Cloud files (your OneDrive and SharePoint files), Outlook and Teams. Each shows a Search all label when it is on.",
+    "Copilot connectors has its own switch. It is often off, so ask your admin if you need it.",
+    "Web search is a separate switch. By default it is off, and where your organisation blocks public websites it shows a warning and agents cannot use public URLs as knowledge.",
+    "Use Attachments to add files for the agent to read.",
+    "Wait if a file shows Preparing. The agent will not use it until it is ready."
    ],
    "prompts": [
     "Use only the files in my team's onboarding folder to answer questions.",
@@ -122,6 +124,7 @@
     "What does the holiday policy say about carrying over leave?"
    ],
    "limits": [
+    "Seen in a live work tenant on 5 November 2026. Button names can differ by app version and admin settings.",
     "Per agent: 4 public website URLs, 100 SharePoint files, 1 SharePoint list, 50 OneDrive files, 5 Teams chats and 5 meetings, 20 uploaded files.",
     "Web addresses can be two levels deep at most and cannot contain query parameters.",
     "The agent respects each person's permissions. If a user cannot open a file, the agent will not use it for them.",
@@ -133,22 +136,22 @@
    },
    "checked": "2026-11-05",
    "flow": [
-    "Open Knowledge",
-    "Pick source",
-    "Wait for Preparing",
-    "Ask question"
+    "Add knowledge",
+    "Work content",
+    "Web search off",
+    "Attachments"
    ]
   },
   {
    "id": "agent-builder-test",
    "app": "agent-builder",
-   "title": "Stage 4: Test on the Try it tab",
+   "title": "Stage 4: Test on the Preview tab",
    "summary": "Try it is a live copy of your agent inside the builder. Ask real questions, check the answers against your sources, and keep editing until it behaves.",
    "status": "available",
    "where": "",
    "steps": [
     "Give the agent a name, description and instructions. Try it only turns on once these exist.",
-    "Select the Try it tab.",
+    "Select the Preview tab at the top. Some Microsoft pages call it Try it.",
     "Select a suggested prompt or type your own question.",
     "Check the answer matches the source. Use the thumbs up or down on the reply to send feedback.",
     "Select New chat to start again, then change instructions or knowledge and retest."
@@ -160,7 +163,6 @@
    ],
    "limits": [
     "Some features do not work in Try it, such as sharing prompts, feedback on the agent itself, and @mentioning other agents. Use them after you create the agent.",
-    "Image generation does not currently work in Try it. Test it after you create the agent.",
     "Newly uploaded SharePoint or OneDrive files show Preparing and are ignored until ready."
    ],
    "source": {
@@ -249,94 +251,22 @@
    ]
   },
   {
-   "id": "agent-builder-code-interpreter",
-   "app": "agent-builder",
-   "title": "Tool: Code interpreter (Create documents, charts, and code)",
-   "summary": "This lets the agent write and run Python code to do sums, analyse data, draw charts and make files you can download. It is on by default in Agent Builder.",
-   "status": "available",
-   "where": "",
-   "steps": [
-    "Open the Configure tab and look at the Capabilities section.",
-    "Check the toggle next to Create documents, charts, and code is on.",
-    "On Try it, upload a file such as an Excel sheet and ask for a chart.",
-    "Select the Code button on the reply if you want to see the Python it ran.",
-    "Download the file from the link in the reply."
-   ],
-   "prompts": [
-    "Create a bar chart and line graph of my uploaded sales data.",
-    "Create a spreadsheet with a multiplication table for numbers 1 through 10 and give me the Excel file.",
-    "Create a table of 10 fake financial transactions including date, amount, merchant, and category."
-   ],
-   "limits": [
-    "Files it makes are hosted temporarily and only available during the session. Download them straight away.",
-    "Input files can be Word, Excel, PowerPoint, PDF, CSV/TSV or TXT.",
-    "Learn describes it as always enabled in Agent Builder, but the build page also shows a toggle. Check the Capabilities section in your own tenant."
-   ],
-   "source": {
-    "label": "Code interpreter capability (Microsoft Learn)",
-    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/code-interpreter"
-   },
-   "checked": "2026-11-05",
-   "flow": [
-    "Open Capabilities",
-    "Create documents toggle",
-    "Upload data",
-    "Download file"
-   ]
-  },
-  {
-   "id": "agent-builder-image-generator",
-   "app": "agent-builder",
-   "title": "Tool: Image generator (Create images)",
-   "summary": "This lets the agent make pictures from a text prompt, using Designer. It makes four images per prompt and you can ask for changes.",
-   "status": "available",
-   "where": "",
-   "steps": [
-    "Open the Configure tab and look at the Capabilities section.",
-    "Check the toggle next to Create images is on.",
-    "Create your agent. Image generation does not currently work on Try it, so test it after you publish the agent.",
-    "Ask for an image. Select one to see it full size.",
-    "Ask a follow-up to change it, then download or copy the one you want."
-   ],
-   "prompts": [
-    "Create an image of a serene beach at sunset with palm trees and gentle waves.",
-    "Design a flyer for a summer music festival and add a date for May 15, 2024.",
-    "Include a tennis ball."
-   ],
-   "limits": [
-    "Does not currently work in the Try it test pane. Test after you publish the agent.",
-    "Learn says it is always enabled in Agent Builder. Availability still depends on your licence and tenant settings."
-   ],
-   "source": {
-    "label": "Image generator capability (Microsoft Learn)",
-    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/image-generator"
-   },
-   "checked": "2026-11-05",
-   "flow": [
-    "Open Capabilities",
-    "Create images toggle",
-    "Create agent",
-    "Ask for image"
-   ]
-  },
-  {
    "id": "agent-builder-skills",
    "app": "agent-builder",
-   "title": "Tool: Skills (reusable task packages)",
+   "title": "Skills: what they are and how to add one",
    "summary": "A skill is a packaged, repeatable task for the agent. It is a folder with a SKILL.md file of instructions, plus optional files and scripts. You can ask Agent Builder to create one, or upload a .zip.",
    "status": "unstated",
    "where": "",
    "steps": [
-    "In Copilot chat, select Agents & Skills, then New agent.",
-    "In the Message Agent Builder box, ask for a reusable workflow, or open the Configure tab, expand Skills and select Add.",
-    "If uploading, add the complete .zip package. Do not upload SKILL.md on its own.",
+    "Open Agent Builder and go to the Configure tab.",
+    "Find the Skills section, which says Add skills to specialise this agent. Expand it and select Add.",
+    "Upload the complete .zip skill package. Do not upload SKILL.md on its own.",
     "Review the skill name, description, instructions and files.",
-    "Try a prompt on the Try it tab that should use the skill."
+    "Select the Preview tab and ask a question that should use the skill."
    ],
    "prompts": [
-    "Create an agent that helps my team write release notes. Add a reusable skill that always follows the same steps: group changes into Features, Fixes and Other, then format a clean Markdown changelog.",
-    "Add a skill that turns a list of notes into our standard weekly update.",
-    "Use the weekly update skill on these notes."
+    "Use the weekly update skill on these notes.",
+    "Which skill did you just use, and why?"
    ],
    "limits": [
     "Up to 8 skills per agent. Each .zip is up to 50 MB, with up to 25 MB per file, 350 files in total and folders no deeper than 3 levels. Skill instructions must be under 20,000 characters.",
@@ -350,11 +280,48 @@
    },
    "checked": "2026-11-05",
    "flow": [
-    "Open Configure",
-    "Expand Skills",
-    "Select Add",
-    "Upload zip"
+    "Configure tab",
+    "Skills",
+    "Add",
+    "Upload .zip"
    ]
+  },
+  {
+   "id": "agent-builder-create-skill",
+   "app": "agent-builder",
+   "title": "Create a new skill",
+   "status": "unstated",
+   "where": "",
+   "summary": "A skill is a saved routine the agent follows the same way every time. There are two ways to make one: ask Agent Builder to write it, or build the package yourself.",
+   "flow": [
+    "Describe it",
+    "Check Configure",
+    "Or build .zip",
+    "Upload"
+   ],
+   "steps": [
+    "Way 1, describe it. In Copilot chat select Agents & Skills, then New agent. In the Message Agent Builder box, describe the routine and ask for a reusable skill.",
+    "On the Configure tab, open Skills and check a skill was created. Select it to review the details.",
+    "If it was not added, use Way 2.",
+    "Way 2, build the package. Make a folder with a file named SKILL.md. At the top of SKILL.md put a name and a description between two lines of three dashes (this is called YAML front matter). Below that write the instructions, under 20,000 characters.",
+    "Add optional files such as templates or a script. Zip the whole folder.",
+    "On Configure, expand Skills, select Add and upload the .zip. Then test it on the Preview tab."
+   ],
+   "prompts": [
+    "Create an agent that helps my team write release notes. Add a reusable skill that always follows the same steps: group the changes into Features, Fixes and Other, then format a clean Markdown changelog with a version heading and today's date.",
+    "---\nname: weekly-update\ndescription: Turns rough notes into our standard weekly update. Use when someone asks for a weekly update.\n---\nWrite the update in three parts: Done this week, Next week, Risks. Keep each part to five bullets. Use plain words. Ask me for anything missing before you write."
+   ],
+   "limits": [
+    "Up to 8 skills per agent. The .zip can be up to 50 MB, with up to 25 MB per file, 350 files in total, and folders no deeper than 3 levels.",
+    "Scripts run in a sandbox with no internet and no package installs. A skill cannot be reused across agents, so upload it again for each agent.",
+    "The first prompt is Microsoft's own example. The SKILL.md example is ours, to show the layout. Change the wording to fit your work.",
+    "Microsoft's pages do not say whether skills are preview or generally available (checked 2026-11-05). If your tenant uses Purview Information Barriers, end users cannot add skills."
+   ],
+   "source": {
+    "label": "Add skills in Agent Builder and Skills in declarative agents (Microsoft Learn, updated 26 Oct 2026)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills"
+   },
+   "checked": "2026-11-05"
   },
   {
    "id": "agent-builder-who-can-create",
@@ -375,8 +342,8 @@
     "Ask your admin: Which knowledge sources and connectors are enabled for us?"
    ],
    "limits": [
-    "With a Microsoft 365 Copilot licence: code interpreter, image generator, web search, connectors, SharePoint, uploaded files, Dataverse, email, people, Teams messages and meetings are all listed as available.",
-    "Without a Copilot licence but with Copilot Chat: web search, code interpreter and image generator only. SharePoint, files and connectors need pay-as-you-go billing. Email, people and Teams need the full licence.",
+    "With a Microsoft 365 Copilot licence: web search, connectors, SharePoint, uploaded files, Dataverse, email, people, Teams messages and meetings are all listed as available.",
+    "Without a Copilot licence but with Copilot Chat: web search only. SharePoint, files and connectors need pay-as-you-go billing. Email, people and Teams need the full licence.",
     "Agents in Agent Builder do not use your tenant's Dataverse storage, and Customer Managed Keys are not supported."
    ],
    "source": {
@@ -445,15 +412,6 @@
    "source": {
     "label": "Agent Builder overview (Microsoft Learn)",
     "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder"
-   }
-  },
-  {
-   "app": "agent-builder",
-   "level": "confirmed",
-   "text": "Image generation does not currently work in the Try it test pane, so you cannot check it before you create the agent.",
-   "source": {
-    "label": "Image generator capability (Microsoft Learn)",
-    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/image-generator"
    }
   },
   {
