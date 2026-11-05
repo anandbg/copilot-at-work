@@ -37,6 +37,38 @@
    ]
   },
   {
+   "id": "agent-builder-tour",
+   "app": "agent-builder",
+   "title": "Tour of the Configure screen",
+   "summary": "What you will see, top to bottom, when you build an agent on the Configure tab. Use it as a map before you start.",
+   "status": "available",
+   "where": "",
+   "flow": [
+    "Instructions",
+    "Skills",
+    "Knowledge",
+    "Suggested prompts"
+   ],
+   "steps": [
+    "Two tabs sit at the top: Configure to build, Preview to test.",
+    "Instructions: write what the agent does, its tone and its rules. Suggest improvements asks Copilot to tighten your text.",
+    "Skills: select Add to give the agent a packaged skill.",
+    "Knowledge: select Add knowledge, or drop files onto the box. Under Work content you can switch on or off Cloud files, Outlook, Teams and Copilot connectors.",
+    "Web search is a separate switch. If your organisation blocks public websites, it shows a warning and stays off.",
+    "Attachments lets you add files. Suggested prompts lets you add title and message pairs. The screen shows three rows to start with."
+   ],
+   "prompts": [],
+   "limits": [
+    "Seen in a live work tenant on 5 November 2026. Your screen may differ with your licence, admin settings and app version.",
+    "Which knowledge sources you can use depends on your licence. See the licence card on this tab."
+   ],
+   "source": {
+    "label": "Seen in a live work tenant, 5 Nov 2026",
+    "url": ""
+   },
+   "checked": "2026-11-05"
+  },
+  {
    "id": "agent-builder-instructions",
    "app": "agent-builder",
    "title": "Stage 2: Write the instructions",
@@ -309,7 +341,8 @@
    "limits": [
     "Up to 8 skills per agent. Each .zip is up to 50 MB, with up to 25 MB per file, 350 files in total and folders no deeper than 3 levels. Skill instructions must be under 20,000 characters.",
     "Skill scripts run in a sandbox with no internet access and no package installs. Skills cannot be reused across agents.",
-    "Microsoft's pages do not say whether skills are in preview or generally available (checked 2026-11-05), so check with your admin. If your tenant uses Purview Information Barriers, end users cannot add skills."
+    "Microsoft's pages do not say whether skills are in preview or generally available (checked 2026-11-05), so check with your admin. If your tenant uses Purview Information Barriers, end users cannot add skills.",
+    "Seen on the Configure tab of a live work tenant on 5 November 2026: a Skills section with an Add button."
    ],
    "source": {
     "label": "Add skills to your declarative agent in Agent Builder (Microsoft Learn) and Skills in declarative agents",
