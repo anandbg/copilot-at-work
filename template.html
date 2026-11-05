@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Copilot at Work</title>
+<meta name="description" content="A daily learning page for Microsoft 365 Copilot at work: how to use it in Teams and Office apps, what is preview, and what to watch out for.">
+<style>
+:root{--bg:#f6f7f4;--card:#fff;--ink:#1d2421;--mute:#56625d;--line:#dde3df;--brand:#0b6b5c;--brand-ink:#fff;--soft:#e4f1ed;
+--ok:#14683a;--okbg:#e2f3e8;--pre:#8a4b00;--prebg:#fdecd3;--road:#33498f;--roadbg:#e3e8f8;--warn:#8a2f1a;--warnbg:#fbe6e1;--shadow:0 1px 2px rgba(0,0,0,.06)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#101513;--card:#182019;--ink:#e8eeea;--mute:#a3b0aa;--line:#2b3731;--brand:#4fc3ad;--brand-ink:#08201b;--soft:#1a2a26;--ok:#7fd9a1;--okbg:#17301f;--pre:#f2b866;--prebg:#33260f;--road:#a9b9f2;--roadbg:#1c2442;--warn:#f1a590;--warnbg:#3a1d16}}
+:root[data-theme=dark]{--bg:#101513;--card:#182019;--ink:#e8eeea;--mute:#a3b0aa;--line:#2b3731;--brand:#4fc3ad;--brand-ink:#08201b;--soft:#1a2a26;--ok:#7fd9a1;--okbg:#17301f;--pre:#f2b866;--prebg:#33260f;--road:#a9b9f2;--roadbg:#1c2442;--warn:#f1a590;--warnbg:#3a1d16}
+*{box-sizing:border-box}html,body{overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 64px}
+header{padding:28px 0 8px}
+h1{font-size:1.75rem;line-height:1.2;margin:0 0 6px;overflow-wrap:anywhere}
+.sub{color:var(--mute);margin:0}
+.bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:14px 0}
+.bar small{color:var(--mute)}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:4px 0 8px;scrollbar-width:thin}
+.tab{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 14px;min-height:44px;white-space:nowrap}
+.tab[aria-selected=true]{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.tab[disabled]{opacity:.55;cursor:default}
+.tab small{font-size:.7rem;margin-left:4px}
+.search{width:100%;border:1px solid var(--line);background:var(--card);border-radius:10px;padding:10px 12px;min-height:44px}
+.try{background:var(--soft);border:1px solid var(--line);border-left:6px solid var(--brand);border-radius:12px;padding:16px;margin:12px 0 20px}
+.try h2{margin:0 0 4px;font-size:1.05rem}
+.try p{margin:4px 0 10px}
+.btn{background:var(--brand);color:var(--brand-ink);border:0;border-radius:8px;padding:10px 14px;min-height:44px}
+.btn.alt{background:transparent;color:var(--brand);border:1px solid var(--brand)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);margin:14px 0;padding:18px;scroll-margin-top:12px}
+.card h3{margin:0 0 4px;font-size:1.2rem;line-height:1.3;overflow-wrap:anywhere}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 10px}
+.tag{font-size:.78rem;font-weight:600;border-radius:999px;padding:3px 10px}
+.t-available{background:var(--okbg);color:var(--ok)}.t-preview{background:var(--prebg);color:var(--pre)}.t-roadmap{background:var(--roadbg);color:var(--road)}
+.t-lic{background:var(--soft);color:var(--mute);font-weight:500}
+.cols{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+@media(min-width:700px){.cols{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
+ol.steps{margin:6px 0 0;padding-left:1.3em}ol.steps li{margin:6px 0}
+h4{margin:16px 0 6px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.pic{border:1px solid var(--line);border-radius:10px;background:var(--bg);padding:6px}
+.pic svg{width:100%;height:auto;display:block}
+.pic figcaption{font-size:.78rem;color:var(--mute);padding:4px 6px 2px}
+.prompt{display:flex;gap:8px;align-items:flex-start;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 8px 8px 12px;margin:6px 0}
+.prompt span{flex:1;min-width:0;overflow-wrap:anywhere}
+.copy{border:1px solid var(--brand);background:transparent;color:var(--brand);border-radius:8px;padding:6px 12px;min-height:44px;min-width:76px}
+.copy.done{background:var(--brand);color:var(--brand-ink)}
+ul.limits{margin:6px 0 0;padding-left:1.2em}ul.limits li{margin:5px 0}
+.done-row{display:flex;gap:10px;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.done-row input{width:22px;height:22px}
+.src{font-size:.85rem;color:var(--mute);margin-top:6px}
+a{color:var(--brand)}
+section.block{margin-top:28px}
+section.block h2{font-size:1.25rem;margin:0 0 8px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0}
+.item .lv{font-size:.75rem;font-weight:700;border-radius:999px;padding:2px 9px;margin-right:6px}
+.lv-confirmed{background:var(--okbg);color:var(--ok)}.lv-community{background:var(--warnbg);color:var(--warn)}
+.progress{font-size:.9rem;color:var(--mute)}
+footer{margin-top:40px;color:var(--mute);font-size:.88rem;border-top:1px solid var(--line);padding-top:16px}
+.hide{display:none!important}
+.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:.85rem;color:var(--mute);margin:6px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Copilot at Work</h1>
+  <p class="sub">One page for using Microsoft 365 Copilot well. Pick your app, read the steps, copy a prompt, try it.</p>
+  <div class="bar"><small id="upd"></small><span class="progress" id="prog"></span><button class="btn alt" id="theme" type="button" aria-label="Switch light or dark">Light / dark</button></div>
+</header>
+<main>
+  <div class="tabs" role="tablist" aria-label="Choose an app" id="tabs"></div>
+  <label class="hide" for="q">Search this page</label>
+  <input class="search" id="q" type="search" placeholder="Search, for example: summarise, action items, late" autocomplete="off">
+  <div id="try"></div>
+  <p class="legend"><span class="tag t-available">Available</span> in general release <span class="tag t-preview">Preview</span> early, may change <span class="tag t-roadmap">Roadmap</span> announced, not yet here</p>
+  <div id="cards"></div>
+  <section class="block" id="changes-block"><h2>What changed recently</h2><div id="changes"></div></section>
+  <section class="block" id="issues-block"><h2>Known problems and limits</h2><p class="sub">Confirmed means Microsoft says so. Community means people report it and Microsoft has not confirmed it.</p><div id="issues"></div></section>
+  <section class="block"><h2>Your licence</h2><p id="lic"></p></section>
+</main>
+<footer>An unofficial learning page, not from Microsoft. Every card links to the Microsoft page it was checked against, with the date. Features differ by licence, tenant settings and app version, so what you see may differ. Pictures are simple drawings, not screenshots.</footer>
+</div>
+<script>
+const DATA = /*DATA*/null;
+const $ = (s, el=document) => el.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const store = { get(k,d){ try{ const v=localStorage.getItem(k); return v?JSON.parse(v):d; }catch(e){ return d; } }, set(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} } };
+let app = (location.hash.slice(1).split('/')[0]) || 'teams';
+if (!DATA.apps.some(a => a.id===app && !a.soon)) app = 'teams';
+let done = store.get('copilot-done', {});
+const TAGS = {available:'Available', preview:'Preview', roadmap:'Roadmap'};
+const WHERE = {
+  'meeting-bar':{cap:'Teams meeting: the Copilot icon is in the meeting controls at the top.', x:300,y:36,label:'Copilot icon'},
+  'chat-top-right':{cap:'Teams chat: Open Copilot is in the upper-right corner.', x:372,y:78,label:'Open Copilot'},
+  'channel-thread':{cap:'Teams channel: Summarize thread is under the post.', x:150,y:178,label:'Summarize thread'}
+};
+function pic(f){
+  const w = WHERE[f.where]; if(!w) return '';
+  return `<figure class="pic"><svg viewBox="0 0 440 240" role="img" aria-label="${esc(w.cap)}">
+  <rect x="2" y="2" width="436" height="236" rx="10" fill="none" stroke="currentColor" opacity=".25"/>
+  <rect x="2" y="2" width="436" height="34" rx="10" fill="currentColor" opacity=".08"/>
+  <rect x="2" y="42" width="52" height="196" fill="currentColor" opacity=".06"/>
+  <g fill="currentColor" opacity=".18"><rect x="14" y="56" width="28" height="28" rx="6"/><rect x="14" y="94" width="28" height="28" rx="6"/><rect x="14" y="132" width="28" height="28" rx="6"/></g>
+  <g fill="currentColor" opacity=".14"><rect x="72" y="100" width="240" height="14" rx="4"/><rect x="72" y="124" width="300" height="14" rx="4"/><rect x="72" y="148" width="200" height="14" rx="4"/><rect x="72" y="60" width="160" height="14" rx="4"/></g>
+  <circle cx="${w.x}" cy="${w.y}" r="15" fill="none" stroke="#0b6b5c" stroke-width="3"/>
+  <circle cx="${w.x}" cy="${w.y}" r="5" fill="#0b6b5c"/>
+  <rect x="${Math.max(8,Math.min(w.x-60,350))}" y="${w.y+22}" width="104" height="22" rx="11" fill="#0b6b5c"/>
+  <text x="${Math.max(8,Math.min(w.x-60,350))+52}" y="${w.y+37}" text-anchor="middle" font-size="12" fill="#fff" font-family="system-ui,sans-serif">${esc(w.label)}</text>
+  </svg><figcaption>${esc(w.cap)} (drawing, not a screenshot)</figcaption></figure>`;
+}
+function card(f){
+  const lic = DATA.licenceShort || 'Needs a Microsoft 365 Copilot licence';
+  return `<article class="card" id="${f.id}" data-text="${esc((f.title+' '+f.summary+' '+f.steps.join(' ')+' '+f.prompts.join(' ')).toLowerCase())}">
+  <h3>${esc(f.title)}</h3>
+  <div class="tags"><span class="tag t-${f.status}">${TAGS[f.status]}</span><span class="tag t-lic">${esc(lic)}</span></div>
+  <p style="margin:0 0 6px">${esc(f.summary)}</p>
+  <div class="cols"><div>
+    <h4>Steps</h4><ol class="steps">${f.steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol>
+    <h4>Prompts to copy</h4>${f.prompts.map(p=>`<div class="prompt"><span>${esc(p)}</span><button class="copy" type="button" data-copy="${esc(p)}">Copy</button></div>`).join('')}
+  </div><div>${pic(f)}<h4>Limits</h4><ul class="limits">${f.limits.map(l=>`<li>${esc(l)}</li>`).join('')}</ul></div></div>
+  <div class="done-row"><input type="checkbox" id="d-${f.id}" ${done[f.id]?'checked':''}><label for="d-${f.id}">I have tried this</label></div>
+  <p class="src">Source: <a href="${esc(f.source.url)}" target="_blank" rel="noopener">${esc(f.source.label)}</a>. Checked ${esc(f.checked)}.</p>
+</article>`;
+}
+function render(){
+  const a = DATA.apps.find(x=>x.id===app);
+  $('#tabs').innerHTML = DATA.apps.map(x=>`<button class="tab" role="tab" type="button" data-app="${x.id}" aria-selected="${x.id===app}" ${x.soon?'disabled':''}>${esc(x.name)}${x.soon?'<small>soon</small>':''}</button>`).join('');
+  const list = DATA.features.filter(f=>f.app===app);
+  $('#cards').innerHTML = list.map(card).join('') || '<p>Nothing here yet.</p>';
+  const t = DATA.try, tf = DATA.features.find(f=>f.id===t.feature);
+  $('#try').innerHTML = `<div class="try"><h2>${esc(t.title)}</h2><p>${esc(t.text)}</p>${tf?`<a class="btn" style="display:inline-block;text-decoration:none" href="#${tf.id}">Show me how</a>`:''}</div>`;
+  $('#changes').innerHTML = DATA.changes.map(c=>`<div class="item"><strong>${esc(c.date)}</strong> ${esc(c.text)} <a href="${esc(c.source.url)}" target="_blank" rel="noopener">${esc(c.source.label)}</a></div>`).join('');
+  $('#issues').innerHTML = DATA.issues.filter(i=>i.app===app).map(i=>`<div class="item"><span class="lv lv-${i.level}">${i.level==='confirmed'?'Confirmed':'Community'}</span>${esc(i.text)} <a href="${esc(i.source.url)}" target="_blank" rel="noopener">${esc(i.source.label)}</a></div>`).join('') || '<p>None listed.</p>';
+  $('#lic').innerHTML = `${esc(DATA.licenceNote)} <a href="${esc(DATA.licenceSource.url)}" target="_blank" rel="noopener">${esc(DATA.licenceSource.label)}</a>`;
+  $('#upd').textContent = 'Updated ' + DATA.updated;
+  progress(); filter();
+}
+function progress(){ const n=DATA.features.length, d=DATA.features.filter(f=>done[f.id]).length; $('#prog').textContent = `You have tried ${d} of ${n}`; }
+function filter(){ const q=$('#q').value.trim().toLowerCase(); let shown=0; document.querySelectorAll('.card').forEach(c=>{ const m=!q||c.dataset.text.includes(q); c.classList.toggle('hide',!m); if(m) shown++; }); }
+document.addEventListener('click', e=>{
+  const t = e.target.closest('.tab'); if(t && !t.disabled){ app=t.dataset.app; history.replaceState(null,'','#'+app); render(); return; }
+  const c = e.target.closest('.copy'); if(c){ const txt=c.dataset.copy; const ok=()=>{ c.textContent='Copied'; c.classList.add('done'); setTimeout(()=>{c.textContent='Copy';c.classList.remove('done')},1600); };
+    if(navigator.clipboard&&window.isSecureContext){ navigator.clipboard.writeText(txt).then(ok,()=>fallback(txt,ok)); } else fallback(txt,ok); }
+});
+function fallback(txt,ok){ const ta=document.createElement('textarea'); ta.value=txt; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); ok(); }catch(e){} ta.remove(); }
+document.addEventListener('change', e=>{ if(e.target.matches('.done-row input')){ done={...done,[e.target.id.slice(2)]:e.target.checked}; store.set('copilot-done',done); progress(); }});
+$('#q').addEventListener('input', filter);
+$('#theme').addEventListener('click', ()=>{ const r=document.documentElement; const dark = r.dataset.theme ? r.dataset.theme==='dark' : matchMedia('(prefers-color-scheme:dark)').matches; r.dataset.theme = dark?'light':'dark'; });
+render();
+</script>
+</body>
+</html>
