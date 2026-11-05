@@ -181,7 +181,7 @@
    "id": "agent-builder-share",
    "app": "agent-builder",
    "title": "Stage 5: Share your agent",
-   "summary": "Sharing gives named people or groups direct access to your agent. You choose who can chat and who can edit.",
+   "summary": "Sharing gives named people or groups direct access to your agent. You choose who can chat and who can edit. Your admin may have turned off sharing with everyone in the organisation, so plan to share with named people or groups.",
    "status": "available",
    "where": "",
    "steps": [
@@ -197,6 +197,7 @@
     "After editing, select Update so shared users see the changes."
    ],
    "limits": [
+    "In a live work tenant on 5 November 2026 the admin had turned off sharing an agent with everyone in the organisation. You can still share with named people or groups.",
     "A group can only be added as Can chat. Add people one by one to make them owners.",
     "Your admin may limit who can share, or turn off Org-wide sharing for chat access. Choices are all users (default), specific users or groups, or no users.",
     "People need the right Copilot licence for the agent's capabilities, or they may see an error.",
