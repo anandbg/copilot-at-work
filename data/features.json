@@ -35,6 +35,10 @@
    "name": "OneNote"
   },
   {
+   "id": "sharepoint",
+   "name": "SharePoint"
+  },
+  {
    "id": "agent-builder",
    "name": "Agent Builder"
   }

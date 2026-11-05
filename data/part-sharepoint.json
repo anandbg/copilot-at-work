@@ -1,0 +1,453 @@
+{
+ "features": [
+  {
+   "id": "sharepoint-create-list",
+   "app": "sharepoint",
+   "title": "Create a list by describing it",
+   "summary": "You describe the list you need in plain words and Copilot builds it, with columns and column types. It is called the SharePoint list agent.",
+   "status": "available",
+   "where": "",
+   "flow": [
+    "Copilot icon",
+    "Create a list",
+    "Describe it",
+    "Refine"
+   ],
+   "steps": [
+    "Open a SharePoint site home page.",
+    "Select the floating Copilot icon.",
+    "Choose the option to create a list.",
+    "Describe the list, then ask for changes in follow-up messages.",
+    "Check the columns before you start adding data."
+   ],
+   "prompts": [
+    "Create a Project Tracker with task, owner, deadline and status",
+    "Create a list to track IT equipment requests, with requester, item, priority and status",
+    "Add a person column called Approver",
+    "Add a currency column called Estimated cost"
+   ],
+   "limits": [
+    "Needs a Microsoft 365 Copilot licence. Microsoft's roadmap item 534606 shows it as launched (preview December 2025, general availability February 2026) but does not state licence terms or limits.",
+    "The steps above come from a community walkthrough, not a Microsoft page. Microsoft only says lists are created 'through prompts'.",
+    "Community testers report calculated columns are not supported, and that generated lists often do not match the structure asked for.",
+    "A community blog says it only creates new lists and cannot read, update or delete existing ones. This conflicts with Microsoft's table saying Copilot in SharePoint can 'create and edit' lists, so test it in your own tenant."
+   ],
+   "source": {
+    "label": "Microsoft 365 Roadmap / Message Center: SharePoint list agent (RM534606)",
+    "url": "https://mc.merill.net/message/RM534606"
+   },
+   "checked": "2026-11-05"
+  },
+  {
+   "id": "sharepoint-edit-list",
+   "app": "sharepoint",
+   "title": "Create and edit lists, columns and items with chat",
+   "summary": "Microsoft says everyday Copilot in SharePoint can create and edit lists as part of the Copilot licence. Community testing shows it adding columns and creating items from plain-language prompts.",
+   "status": "preview",
+   "where": "",
+   "flow": [
+    "Open list",
+    "Copilot icon",
+    "Ask in chat",
+    "Confirm"
+   ],
+   "steps": [
+    "Open the list in SharePoint.",
+    "Select the floating Copilot icon in the lower-right corner.",
+    "Type what you want changed, for example a new column or new items.",
+    "Check the confirmation Copilot shows before anything is saved."
+   ],
+   "prompts": [
+    "Add a Choice column called Status with Not started, In progress and Done",
+    "Add three new items for the Q4 onboarding tasks, owner Sam, due in December",
+    "Group this list by Status and sort by due date",
+    "Summarise what is in this list"
+   ],
+   "limits": [
+    "The steps and prompts below come from a community test, not a Microsoft page. Try them on a test list first.",
+    "Microsoft's table lists 'Create and edit pages, libraries, or lists' as included with the Microsoft 365 Copilot licence. It gives no steps or column and item limits for lists.",
+    "The page for 'Ask a question' says the chat scopes to the list's items when you are in a list.",
+    "Item creation with a confirm step and bulk creation from an Excel file are only described in a community article, not a Microsoft page.",
+    "Calculated columns and custom JSON view formatting were reported as not working in that community test."
+   ],
+   "source": {
+    "label": "Get started with Copilot in SharePoint (Microsoft Learn), licensing table",
+    "url": "https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started"
+   },
+   "checked": "2026-11-05"
+  },
+  {
+   "id": "sharepoint-rules",
+   "app": "sharepoint",
+   "title": "Set up alerts and rules in a document library",
+   "summary": "You say what should happen and Copilot builds a rule that emails, moves, copies or sets a value when a file changes. Microsoft documents this for document libraries.",
+   "status": "preview",
+   "where": "",
+   "flow": [
+    "Copilot icon",
+    "Set up rules",
+    "Review rule",
+    "Save changes"
+   ],
+   "steps": [
+    "In the lower-right corner of your document library, select the Copilot in SharePoint icon.",
+    "From the quick actions menu, select Set up rules.",
+    "Pick a suggested action such as Send notification, or type your own instruction, then select Send.",
+    "Review the rule Copilot generates and select Create.",
+    "Select Save changes, then Apply changes."
+   ],
+   "prompts": [
+    "Email me when a contract is approved",
+    "Notify me when new files are added and the release date is in 2025",
+    "Move reviewed invoices to the Verified Expenses folder",
+    "Copy all Northwind Traders invoices to the Northwind folder"
+   ],
+   "limits": [
+    "Triggers: a new item is created, modified or deleted. Actions: email, move, copy and set value. The 'date approaches' trigger, translate and delete actions are not supported yet.",
+    "Up to 15 rules per list or library. Rules cannot be applied to multi-line text columns or sent to email-enabled security groups. Encrypted files cannot be analysed.",
+    "Prompts work in all Copilot languages, but Copilot can only process files in English. Emails come from no-reply@sharepointonline.com.",
+    "The Microsoft page is written for document libraries. It does not say Copilot builds rules for ordinary lists, so treat list rules as unconfirmed. Needs a Microsoft 365 Copilot licence and the content-manager role (Manage list permission)."
+   ],
+   "source": {
+    "label": "Automate workflows in a SharePoint document library (Microsoft Learn, updated 24 Sep 2026)",
+    "url": "https://learn.microsoft.com/sharepoint/copilot-in-sharepoint-automate-workflows"
+   },
+   "checked": "2026-11-05"
+  },
+  {
+   "id": "sharepoint-views",
+   "app": "sharepoint",
+   "title": "Create a view of a library or list",
+   "summary": "Describe what you want to see and Copilot builds a view that shows or hides columns, sorts, filters and groups.",
+   "status": "preview",
+   "where": "",
+   "flow": [
+    "Copilot icon",
+    "Create new view",
+    "Describe view",
+    "Save changes"
+   ],
+   "steps": [
+    "In the lower-right corner of your document library, select the Copilot in SharePoint icon.",
+    "From the quick actions menu, select Create new view.",
+    "Pick a suggested action such as Show recently updated files first, or type your own instruction, then select Send.",
+    "Select Save changes.",
+    "Choose to update the current view or save as a new view, then select Apply changes."
+   ],
+   "prompts": [
+    "Show me past due invoices, grouped by vendor and sorted by amount due",
+    "Display HR policies by category showing only those that are already in effect",
+    "I want to see project plans grouped by phase and sorted by start date. Show the owner column and hide the location column",
+    "Show recently updated files first"
+   ],
+   "limits": [
+    "Supported view actions: show column, hide column, sort, filter and group by. Column ordering, column width and conditional formatting are not supported yet.",
+    "Views Copilot makes are public. Everyone who uses the library can see them. Personal views are not supported.",
+    "Copilot can only process files in English. Encrypted files cannot be analysed to build views.",
+    "The detailed Learn page is about document libraries. A support page says the same Floating Button flow works for lists using item metadata, but gives no further list detail. Needs a Microsoft 365 Copilot licence and Manage list permission."
+   ],
+   "source": {
+    "label": "Create views in a SharePoint document library (Microsoft Learn, updated 24 Sep 2026)",
+    "url": "https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-create-views"
+   },
+   "checked": "2026-11-05"
+  },
+  {
+   "id": "sharepoint-autofill",
+   "app": "sharepoint",
+   "title": "Add columns that fill themselves from your files",
+   "summary": "Copilot reads the files in a library, suggests useful columns and fills them in, so you can filter, group and sort your files.",
+   "status": "preview",
+   "where": "",
+   "flow": [
+    "Open library",
+    "Copilot icon",
+    "Autofill columns",
+    "Apply"
+   ],
+   "steps": [
+    "Go to the SharePoint document library you want to organise.",
+    "Open Copilot in SharePoint using the Floating Button.",
+    "Select Create autofill columns.",
+    "Review the suggested columns, or ask for a column you want.",
+    "Apply the changes to the library."
+   ],
+   "prompts": [
+    "Suggest columns for this library based on the files",
+    "Add a column showing the supplier name for each invoice",
+    "Add a column showing the contract end date",
+    "Add a column with a one-line description of each file"
+   ],
+   "limits": [
+    "Files are not moved, renamed or deleted, and existing permissions still apply. After you apply, Copilot may need time to process the files.",
+    "Real-time autofill across a whole site is an 'advanced work' feature. It needs usage-based billing and Copilot Credits, set up by an admin.",
+    "Copilot can only process files in English, and encrypted files cannot be analysed. The support page gives no file count or file type limits.",
+    "Needs a Microsoft 365 Copilot licence and the content-manager role (Manage list permission)."
+   ],
+   "source": {
+    "label": "Create autofill columns (Microsoft Support)",
+    "url": "https://support.microsoft.com/en-us/sharepoint/copilot-in-sharepoint/create-autofill-columns"
+   },
+   "checked": "2026-11-05"
+  },
+  {
+   "id": "sharepoint-dashboard",
+   "app": "sharepoint",
+   "title": "Turn one list into a live dashboard",
+   "summary": "Copilot builds an interactive report from a list. It stays linked to the list and refreshes each time you open it. Excel and CSV files also work as the source.",
+   "status": "preview",
+   "where": "",
+   "flow": [
+    "Open list",
+    "Copilot icon",
+    "Ask for dashboard",
+    "Open report"
+   ],
+   "steps": [
+    "Open the list in SharePoint.",
+    "Select the floating Copilot icon.",
+    "Describe the dashboard you want and send the prompt.",
+    "Open the report Copilot creates. It refreshes from the list each time it is opened."
+   ],
+   "prompts": [
+    "Create an executive dashboard from this project portfolio list showing project health, milestones, risks",
+    "Create a request pipeline dashboard from this list",
+    "Create an inventory tracker dashboard from this list",
+    "Review deal pipeline list and filter for deals assigned to me, summarise the items closed this week into a live interactive dashboard"
+   ],
+   "limits": [
+    "Microsoft's August 2026 post does not say whether this is preview or general availability, and a reply in its comments mentions throttling 'during preview'. Treat it as preview.",
+    "Needs a Microsoft 365 Copilot licence. Microsoft's post lists a list, Excel file or CSV as sources. A third-party article says each dashboard uses one source only. Combining several lists into one report is not described on any Microsoft page I read.",
+    "A third-party article says dashboards respect your own permissions and show data as-is, including messy values. It is not a Microsoft page.",
+    "The save and share steps are not in the Microsoft post. Check how your team can reopen the report before relying on it."
+   ],
+   "source": {
+    "label": "What's New in Copilot in SharePoint: August 2026 (Tech Community)",
+    "url": "https://techcommunity.microsoft.com/t5/microsoft-sharepoint-blog/what-s-new-in-copilot-in-sharepoint-august-2026/ba-p/4535421"
+   },
+   "checked": "2026-11-05"
+  },
+  {
+   "id": "sharepoint-create-pages",
+   "app": "sharepoint",
+   "title": "Create and edit a page with Copilot",
+   "summary": "Copilot drafts a page or news post from your prompt or files, fills a template, or edits an existing page. Nothing goes live until you publish.",
+   "status": "available",
+   "where": "",
+   "flow": [
+    "New page",
+    "Copilot panel",
+    "Enter prompt",
+    "Review, publish"
+   ],
+   "steps": [
+    "Select New page, then Blank page or a page template.",
+    "Open the Copilot authoring panel. If it is closed, select the Copilot logo at the top of the pane.",
+    "Enter a prompt, optionally with source content, and submit it.",
+    "Review the highlighted changes. Select Undo once to reverse a whole prompt.",
+    "Publish the page when you are happy."
+   ],
+   "prompts": [
+    "Create a news post from the file. Keep the original structure, section names and wording",
+    "Create a project status page with sections for progress, risks and next steps",
+    "Rewrite this section in a friendlier tone and make it shorter",
+    "Add an FAQ section about our travel policy"
+   ],
+   "limits": [
+    "Copilot supports Microsoft's own web parts only. Third-party web parts are not supported. It can edit flexible sections but cannot create them.",
+    "Copilot cannot create a separate page while you are editing a page. Pages from chat are created as unpublished drafts.",
+    "Page authoring is included with a Microsoft 365 Copilot licence and does not use Copilot Credits. High-volume use might be throttled. You need edit permission on the site.",
+    "Microsoft says general availability began rolling out on 30 September 2026, so it may not have reached your organisation yet. Always review the content before publishing."
+   ],
+   "source": {
+    "label": "Create pages with AI in SharePoint (Microsoft Support)",
+    "url": "https://support.microsoft.com/en-us/sharepoint/sites-pages/create-pages-with-ai-in-sharepoint"
+   },
+   "checked": "2026-11-05"
+  },
+  {
+   "id": "sharepoint-improve-site",
+   "app": "sharepoint",
+   "title": "Find stale pages, content gaps and broken links",
+   "summary": "Improve this site points out pages nobody uses, topics people search for but cannot find, and broken links, with a fix for each.",
+   "status": "preview",
+   "where": "",
+   "flow": [
+    "Improve this site",
+    "Pick a check",
+    "Review items",
+    "Fix it"
+   ],
+   "steps": [
+    "Select Improve this site on your site.",
+    "To clear old pages, select Improve your site, review the suggested pages and select Demote.",
+    "To fill gaps, select Find content gaps, open a Suggestion, then select Create page or Create section.",
+    "To repair links, select Fix broken links, then View to edit the page or set up a redirect."
+   ],
+   "prompts": [
+    "Which pages on this site have not been viewed or edited recently?",
+    "What are people searching for on this site that they cannot find?",
+    "Show me the broken links on this site",
+    "Create a page for the top content gap"
+   ],
+   "limits": [
+    "Find content gaps is for Site Collection Admins only. Demote needs permission to edit the page. Fix broken links needs edit permission on a page that contains the link.",
+    "Demoting hides a page from search and agent answers but keeps its URL working. Broken link detection covers site pages only. Content gaps do not work for tenants using Customer Managed Keys.",
+    "The prompts are sensible examples. The Microsoft page uses buttons rather than prompts.",
+    "The Microsoft page does not say whether this is preview. The overview page it belongs to still says Public Preview, with general availability rolling out from 30 September 2026."
+   ],
+   "source": {
+    "label": "Improve your SharePoint site with Copilot in SharePoint (Microsoft Support)",
+    "url": "https://support.microsoft.com/en-us/SharePoint/copilot-in-sharepoint/improve-your-sharepoint-site-with-copilot-in-sharepoint"
+   },
+   "checked": "2026-11-05"
+  },
+  {
+   "id": "sharepoint-ask-summarise-compare",
+   "app": "sharepoint",
+   "title": "Ask, summarise and compare files in a library",
+   "summary": "Ask questions about a site, a library, a list or selected files. Summarise up to 5 files, or compare them side by side.",
+   "status": "preview",
+   "where": "",
+   "flow": [
+    "Select files",
+    "AI button",
+    "Summarize / Compare",
+    "Ask follow-up"
+   ],
+   "steps": [
+    "Select up to 5 files in the library.",
+    "Select the AI button in the command bar, then choose Summarize or Compare files.",
+    "Read the answer in the AI panel.",
+    "Select Ask a question in the chat pane to follow up."
+   ],
+   "prompts": [
+    "Summarise these files in five bullet points",
+    "Compare these two contracts and list the differences",
+    "Which of these files was modified most recently and who edited it last?",
+    "Generate an FAQ from this file"
+   ],
+   "limits": [
+    "Up to 5 files at a time. Videos and images are not supported. Audio overviews work for Word and PDF files only.",
+    "Supported types include Word, Excel, PowerPoint, PDF, TXT, RTF, Loop and web page files. Copilot only sees content you already have permission to read.",
+    "With nothing selected in a library, a question covers the whole library. In a list it covers the list's items.",
+    "Copilot in SharePoint does not appear on the SharePoint Home page, Viva Connections, or SharePoint sites inside Teams. Needs a Microsoft 365 Copilot licence."
+   ],
+   "source": {
+    "label": "Compare your files with AI (Microsoft Support)",
+    "url": "https://support.microsoft.com/en-US/sharepoint/copilot-in-sharepoint/compare-your-files-with-ai"
+   },
+   "checked": "2026-11-05"
+  },
+  {
+   "id": "sharepoint-agents",
+   "app": "sharepoint",
+   "title": "Build an agent that answers from your site or library",
+   "summary": "Every site has a ready-made agent. If you can edit the site you can create your own agent limited to chosen sites, folders or files.",
+   "status": "available",
+   "where": "",
+   "flow": [
+    "Open library",
+    "Copilot menu",
+    "Create an agent",
+    "Name, Create"
+   ],
+   "steps": [
+    "Open the document library or list the agent should use.",
+    "On the command bar, select Copilot, then Create an agent.",
+    "Or select files or folders, right-click and select Create an agent.",
+    "Fill in the name and purpose in the Create your new agent dialog, then select Create."
+   ],
+   "prompts": [
+    "What is our process for requesting a new supplier?",
+    "Summarise the latest project updates on this site",
+    "Create a custom pitch script to compare Mega-300 and Mega-200",
+    "Which policy covers working from home?"
+   ],
+   "limits": [
+    "You need edit permission on the site and a Microsoft 365 Copilot licence (or pay-as-you-go billing). An agent only answers from sources you can already access.",
+    "Up to 20 source items. Agents work on modern sites only. Pages in the Site Pages library cannot be used as sources. Images, videos and OneNote are listed as coming soon.",
+    "Microsoft says upgrades to agents in SharePoint are coming in mid-November 2026, so the experience may change.",
+    "Agents in SharePoint are not the same as Copilot Studio agents."
+   ],
+   "source": {
+    "label": "Create an agent in SharePoint (Microsoft Support)",
+    "url": "https://support.microsoft.com/en-us/sharepoint/copilot-in-sharepoint/create-an-agent-in-sharepoint"
+   },
+   "checked": "2026-11-05"
+  }
+ ],
+ "issues": [
+  {
+   "app": "sharepoint",
+   "level": "confirmed",
+   "text": "Copilot in SharePoint does not appear on the SharePoint Home page, Viva Connections, or SharePoint sites inside Teams. It is also not supported in GCC, GCC High, DoD or 21Vianet clouds.",
+   "source": {
+    "label": "Copilot in SharePoint overview (Microsoft Support) and Get started (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started"
+   }
+  },
+  {
+   "app": "sharepoint",
+   "level": "confirmed",
+   "text": "Everyday features come with the Copilot licence. 'Advanced work' (whole sites, large jobs, real-time autofill, scheduled workflows, image generation) needs Copilot Credits set up by an admin. Without credits, Copilot explains what it cannot do or asks you to start a new chat.",
+   "source": {
+    "label": "Get started with Copilot in SharePoint (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started"
+   }
+  },
+  {
+   "app": "sharepoint",
+   "level": "confirmed",
+   "text": "Copilot reads files in English only. Text prompts work in other supported languages. Encrypted files cannot be analysed for rules, views or columns. Videos and images are not supported in file summaries.",
+   "source": {
+    "label": "Automate workflows in a SharePoint document library (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/sharepoint/copilot-in-sharepoint-automate-workflows"
+   }
+  },
+  {
+   "app": "sharepoint",
+   "level": "confirmed",
+   "text": "Some Microsoft pages still say Public Preview. Microsoft's Learn page says general availability began rolling out on 30 September 2026, so a feature may not yet show in your organisation. The older PowerShell opt-in controls were honoured only until 1 November 2026. Site owners now use Settings > Site AI.",
+   "source": {
+    "label": "Get started with Copilot in SharePoint (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started"
+   }
+  },
+  {
+   "app": "sharepoint",
+   "level": "community",
+   "text": "Users report the list agent often builds a list that does not match what was asked, struggles with messy data of about 60 rows, and works only on new lists. Results from Excel in Copilot were called more reliable.",
+   "source": {
+    "label": "Tech Community discussion: SharePoint List Agent",
+    "url": "https://techcommunity.microsoft.com/discussions/microsoft365copilot/sharepoint-list-agent-with-microsoft-365-copilot-%E2%80%93-create-lists-instantly-with-n/4503238"
+   }
+  }
+ ],
+ "changes": [
+  {
+   "date": "2026-09-30",
+   "text": "General availability of Copilot in SharePoint began rolling out. Weekly preview limits are removed, and a paid 'advanced work' tier using Copilot Credits is added.",
+   "source": {
+    "label": "Get started with Copilot in SharePoint (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started"
+   }
+  },
+  {
+   "date": "2026-11-01",
+   "text": "The preview PowerShell controls for turning Copilot in SharePoint on or off stopped being honoured. Admins now use Site AI settings and Restricted Content Discovery.",
+   "source": {
+    "label": "Get started with Copilot in SharePoint (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started"
+   }
+  },
+  {
+   "date": "2026-11-04",
+   "text": "The SharePoint list agent (create lists from prompts) was added to the Microsoft 365 Copilot release notes.",
+   "source": {
+    "label": "Release Notes for Microsoft 365 Copilot (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes"
+   }
+  }
+ ]
+}

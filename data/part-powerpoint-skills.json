@@ -1,0 +1,160 @@
+{
+ "features": [
+  {
+   "id": "powerpoint-run-skill",
+   "app": "powerpoint",
+   "title": "Run a skill in Copilot in PowerPoint",
+   "summary": "A skill is a saved set of instructions that tells Copilot how to do one task your way. You pick a skill from a menu, or type its name with an @ sign, and Copilot follows it.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "Open the Copilot pane in PowerPoint.",
+    "Select the + menu in the Copilot prompt field.",
+    "Select Choose skills.",
+    "Pick a skill from the list, or type @ and the skill name in your prompt.",
+    "Write what you want and send it."
+   ],
+   "flow": [
+    "Plus menu",
+    "Choose skills",
+    "Pick skill"
+   ],
+   "prompts": [
+    "@copyedit-this-presentation Check this deck for typos and wording.",
+    "@your-skill-name Apply it to slides 3 to 6.",
+    "Use my skill to tidy the wording on the current slide."
+   ],
+   "limits": [
+    "Built-in skills and your own skills both show in the list.",
+    "A skill you turn off in Manage skills stops being used automatically and leaves the dropdown.",
+    "The page says Copilot may not be included in your subscription or may depend on your organisation's settings."
+   ],
+   "source": {
+    "label": "Use custom skills with Copilot in PowerPoint (Microsoft Support)",
+    "url": "https://support.microsoft.com/en-us/powerpoint/copilot/copilot-in-powerpoint-skills"
+   },
+   "checked": "2026-11-05"
+  },
+  {
+   "id": "powerpoint-add-custom-skill",
+   "app": "powerpoint",
+   "title": "Add your own skill",
+   "summary": "You can upload a skill file or paste a skill into Copilot in PowerPoint. It is saved to the Skills folder in your OneDrive and is for your use only.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "In the Copilot pane, select the + menu, then Choose skills.",
+    "Scroll to the end and select Manage skills.",
+    "Select Add skill.",
+    "Upload or drag and drop your skill files, or paste your skill into the form and select Add.",
+    "If the skill does not show, refresh in Manage skills."
+   ],
+   "flow": [
+    "Plus menu",
+    "Choose skills",
+    "Manage skills",
+    "Add skill"
+   ],
+   "prompts": [
+    "@my-new-skill Run this on the whole deck.",
+    "@my-new-skill Use it on slide 2 only.",
+    "Which of my skills fits tidying a long bullet list?"
+   ],
+   "limits": [
+    "Uploaded skills are for personal use only. The page does not describe sharing them with colleagues.",
+    "ZIP uploads can hold file types such as md, txt, csv, json, xml, html, svg, py and js.",
+    "Image files such as PNG, PDF files and nested ZIP folders are not currently supported.",
+    "The page lists PowerPoint for Microsoft 365, PowerPoint for Microsoft 365 for Mac and PowerPoint for iPad."
+   ],
+   "source": {
+    "label": "Use custom skills with Copilot in PowerPoint (Microsoft Support)",
+    "url": "https://support.microsoft.com/en-us/powerpoint/copilot/copilot-in-powerpoint-skills"
+   },
+   "checked": "2026-11-05"
+  },
+  {
+   "id": "powerpoint-skill-file-format",
+   "app": "powerpoint",
+   "title": "Write a skill file and manage it in OneDrive",
+   "summary": "A skill is a folder with one text file called SKILL.md inside. You can drop folders into your OneDrive skills folder, then refresh. You can also edit, delete or hide a skill later.",
+   "status": "available",
+   "where": "",
+   "steps": [
+    "In the Copilot pane, select Settings (the ... in the upper-right corner), then Manage skills.",
+    "Select Custom skills, then Create OneDrive folder.",
+    "Select Open skills folder.",
+    "Add a folder for your skill. Inside it, put a SKILL.md file with a name and a description between the triple-dash lines, then your instructions.",
+    "Back in the Custom skills dialog, select Refresh."
+   ],
+   "flow": [
+    "Open Settings",
+    "Manage skills",
+    "Custom skills",
+    "Open skills folder"
+   ],
+   "prompts": [
+    "@your-skill-name Run it on this deck.",
+    "@your-skill-name Apply it to the selected slide.",
+    "Show me which skills I have turned on."
+   ],
+   "limits": [
+    "The folder name must match the name in SKILL.md, or Copilot skips the skill.",
+    "The description in SKILL.md must tell Copilot when to use the skill. The instructions below it have no format limits.",
+    "To hide a skill without deleting it, rename its folder so it no longer matches the name. In Manage skills you can also select Edit or Delete under a custom skill.",
+    "The page links to the Agent Skills specification for standard formatting. It gives no size limit."
+   ],
+   "source": {
+    "label": "Use custom skills with Copilot in PowerPoint (Microsoft Support)",
+    "url": "https://support.microsoft.com/en-us/powerpoint/copilot/copilot-in-powerpoint-skills"
+   },
+   "checked": "2026-11-05"
+  }
+ ],
+ "issues": [
+  {
+   "app": "powerpoint",
+   "level": "confirmed",
+   "text": "Your own skills are personal. They are saved in your OneDrive and only you can use them. No page I read describes sharing a personal skill in PowerPoint.",
+   "source": {
+    "label": "MC1441782 Upload or add a custom skill with Copilot in PowerPoint (Web)",
+    "url": "https://mc.merill.net/message/MC1441782"
+   }
+  },
+  {
+   "app": "powerpoint",
+   "level": "confirmed",
+   "text": "Skill files cannot include PNG images, PDF files or nested ZIP folders at the moment.",
+   "source": {
+    "label": "Use custom skills with Copilot in PowerPoint (Microsoft Support)",
+    "url": "https://support.microsoft.com/en-us/powerpoint/copilot/copilot-in-powerpoint-skills"
+   }
+  },
+  {
+   "app": "powerpoint",
+   "level": "confirmed",
+   "text": "Skills made by your IT admins for the whole company (organisation skills) are a separate feature for PowerPoint for Windows. Admins upload them in the Microsoft 365 admin center. Workers cannot create these.",
+   "source": {
+    "label": "MC1478961 Organization skill support for Copilot in PowerPoint for Windows",
+    "url": "https://mc.merill.net/message/MC1478961"
+   }
+  }
+ ],
+ "changes": [
+  {
+   "date": "2026-09-24",
+   "text": "Organisation skills for Copilot in PowerPoint for Windows announced as generally available: admins upload skills in the Microsoft 365 admin center and share them across the company.",
+   "source": {
+    "label": "MC1478961",
+    "url": "https://mc.merill.net/message/MC1478961"
+   }
+  },
+  {
+   "date": "2026-10-09",
+   "text": "Skills in Copilot Chat announced as generally available, with rollout from October 2026 to mid-November 2026. Users can create, edit, upload and share skills there; admins manage them under Agents > Tools.",
+   "source": {
+    "label": "MC1493223",
+    "url": "https://mc.merill.net/message/MC1493223"
+   }
+  }
+ ]
+}
