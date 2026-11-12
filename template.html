@@ -85,7 +85,7 @@ footer{margin-top:40px;color:var(--mute);font-size:.88rem;border-top:1px solid v
   <section class="block" id="issues-block"><h2>Known problems and limits</h2><p class="sub">Confirmed means Microsoft says so. Community means people report it and Microsoft has not confirmed it.</p><div id="issues"></div></section>
   <section class="block"><h2>Your licence</h2><p id="lic"></p></section>
 </main>
-<footer>An unofficial learning page, not from Microsoft. Every card links to the Microsoft page it was checked against, with the date. Features differ by licence, tenant settings and app version, so what you see may differ. Pictures are simple drawings, not screenshots. Prompts are examples: change the names and details to fit your work.</footer>
+<footer>An unofficial learning page, not from Microsoft. Every card links to the Microsoft page it was checked against, with the date. Features differ by licence, tenant settings and app version, so what you see may differ. Pictures are simple drawings, not screenshots. Prompts are examples: change the names and details to fit your work. The Excel skills on the Skills tab are by kesslernity (github.com/kesslernity/awesome-copilot-office-skills), licensed CC BY-SA 4.0, unchanged and not from Microsoft.</footer>
 </div>
 <script>
 const DATA = /*DATA*/null;
@@ -121,7 +121,7 @@ function card(f){
   return `<article class="card" id="${f.id}" data-text="${esc((f.title+' '+f.summary+' '+f.steps.join(' ')+' '+f.prompts.join(' ')).toLowerCase())}">
   <h3>${esc(f.title)}</h3>
   <div class="tags"><span class="tag t-${f.status}">${TAGS[f.status]}</span><span class="tag t-lic">${esc(lic)}</span></div>
-  <p style="margin:0 0 6px">${esc(f.summary)}</p>${flow(f)}
+  <p style="margin:0 0 6px">${esc(f.summary)}</p>${f.download?`<p style="margin:0 0 8px"><a class="btn" style="display:inline-block;text-decoration:none" href="${esc(f.download.url)}" download>${esc(f.download.label)}</a></p>`:''}${flow(f)}
   <div class="cols"><div>
     <h4>Steps</h4><ol class="steps">${f.steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol>
     <h4>Prompts to copy</h4>${f.prompts.map(p=>`<div class="prompt"><span>${esc(p)}</span><button class="copy" type="button" data-copy="${esc(p)}">Copy</button></div>`).join('')}
