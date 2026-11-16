@@ -1,0 +1,52 @@
+{
+ "features": [
+  {
+   "id": "skills-dashboard-prompt-writer",
+   "app": "skills",
+   "title": "Dashboard prompt writer (Excel and PowerPoint)",
+   "summary": "Reads your data and your questions, then writes the prompt to paste into Copilot in Excel or PowerPoint to build an interactive dashboard. You get KPI cards with comparisons, filters, a panel per question, and follow-ups for drivers, what-if scenarios and data checks. It writes prompts only and changes nothing in your file.",
+   "status": "unstated",
+   "where": "",
+   "steps": [
+    "Select Download below and unzip the file.",
+    "Copy the folder dashboard-prompt-writer into your OneDrive skills folder.",
+    "In the Copilot pane, select Settings, then Manage plugins & skills, then Custom skills, then Refresh.",
+    "Open your workbook or deck, then type @dashboard-prompt-writer and your questions.",
+    "Paste the prompt it gives you into Copilot, then add the follow-ups one at a time."
+   ],
+   "flow": [
+    "Download",
+    "OneDrive skills folder",
+    "Refresh",
+    "@dashboard-prompt-writer"
+   ],
+   "prompts": [
+    "@dashboard-prompt-writer Which stores are falling behind, and why?",
+    "@dashboard-prompt-writer Build a dashboard for my manager from this Jira export: what is late and who is overloaded?",
+    "@dashboard-prompt-writer What happens to margin if we cut prices 10%?"
+   ],
+   "limits": [
+    "The Excel dashboard and PowerPoint interactive slide features it writes for may still be in preview in your tenant. Ask your IT team.",
+    "Works best when the data is in Excel tables with clear headers and no merged cells.",
+    "After Copilot builds the dashboard, change one source cell and check the KPI cards move.",
+    "Tested by following the skill files on a fictional workbook, not yet in a live tenant. The full pack includes that workbook, a setup guide, Agent Builder instructions and a Word fallback prompt.",
+    "Community skill, not from Microsoft. Try it first on data with nothing sensitive in it."
+   ],
+   "download": {
+    "url": "skills/dashboard-prompt-writer.zip",
+    "label": "Download dashboard-prompt-writer.zip"
+   },
+   "source": {
+    "label": "Use custom skills with Copilot in Excel (Microsoft Support)",
+    "url": "https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-skills"
+   },
+   "checked": "2026-11-16",
+   "download2": {
+    "url": "skills/dashboard-prompt-writer-pack.zip",
+    "label": "Download the full pack (guide, test workbook, Agent Builder)"
+   }
+  }
+ ],
+ "issues": [],
+ "changes": []
+}

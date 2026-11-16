@@ -121,7 +121,7 @@ function card(f){
   return `<article class="card" id="${f.id}" data-text="${esc((f.title+' '+f.summary+' '+f.steps.join(' ')+' '+f.prompts.join(' ')).toLowerCase())}">
   <h3>${esc(f.title)}</h3>
   <div class="tags"><span class="tag t-${f.status}">${TAGS[f.status]}</span><span class="tag t-lic">${esc(lic)}</span></div>
-  <p style="margin:0 0 6px">${esc(f.summary)}</p>${f.download?`<p style="margin:0 0 8px"><a class="btn" style="display:inline-block;text-decoration:none" href="${esc(f.download.url)}" download>${esc(f.download.label)}</a></p>`:''}${flow(f)}
+  <p style="margin:0 0 6px">${esc(f.summary)}</p>${[f.download,f.download2].filter(Boolean).map(d=>`<p style="margin:0 0 8px"><a class="btn" style="display:inline-block;text-decoration:none" href="${esc(d.url)}" download>${esc(d.label)}</a></p>`).join('')}${flow(f)}
   <div class="cols"><div>
     <h4>Steps</h4><ol class="steps">${f.steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol>
     <h4>Prompts to copy</h4>${f.prompts.map(p=>`<div class="prompt"><span>${esc(p)}</span><button class="copy" type="button" data-copy="${esc(p)}">Copy</button></div>`).join('')}
